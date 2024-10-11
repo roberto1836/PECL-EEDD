@@ -8,12 +8,16 @@ public:
     Proceso();
     ~Proceso();
     void mostrar();
+    bool getVacio();
+    void setVacio(bool v);
+    void crearProceso(int pid);
 private:
     bool tipo;
     int PID;
-    int nombreUsuario;
+    string nombreUsuario;
     bool estado;
     int prioridad;
+    bool vacio;
 };
 
 #endif // PROCESO_HPP

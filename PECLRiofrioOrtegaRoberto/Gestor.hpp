@@ -3,10 +3,10 @@
 
 class Gestor
 {
+
 public:
     Gestor();
     ~Gestor();
-
 };
 
 #endif // GESTOR_HPP
