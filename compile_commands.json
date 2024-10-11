@@ -1,0 +1,45 @@
+[{
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Pila.hpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Pila.hpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Pila.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Cola.hpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Cola.hpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Cola.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Proceso.cpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Proceso.cpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Proceso.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Proceso.hpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Proceso.hpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Proceso.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Pila.cpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Pila.cpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Pila.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoPila.hpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoPila.hpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoPila.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoCola.hpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoCola.hpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoCola.hpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\main.cpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\main.cpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\main.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoCola.cpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoCola.cpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoCola.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoPila.cpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoPila.cpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\NodoPila.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Cola.cpp",
+  "directory": "C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto",
+  "command": "clang++ -c C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Cola.cpp -o C:\\Users\\ThinkPad\\OneDrive\\Documentos\\EEDD2024\\PECL-EEDD\\PECLRiofrioOrtegaRoberto\\Cola.cpp.o  -I. -I.  -gdwarf-2  -O0  -Wall"
+ }]
