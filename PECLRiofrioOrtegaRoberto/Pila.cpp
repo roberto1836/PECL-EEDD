@@ -24,8 +24,11 @@ void Pila::extraer(){
 }
 
 Proceso Pila::cima(){
-    if(!ultimo)
+    if(!ultimo){
+        Proceso pro;
+        pro.setVacio(true);
         return ultimo->valor;
+    }
     return ultimo->valor;
 }
 

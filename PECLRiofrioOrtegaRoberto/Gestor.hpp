@@ -4,9 +4,11 @@
 #include "Cola.hpp"
 class Gestor
 {
+
 public:
     Gestor();
     ~Gestor();
+<<<<<<< HEAD
 	int ProcesosEnPila(Pila p);
 	int ProcesosEnGPU0(Cola c);
 	int ProcesosEnGPU1(Cola c);
@@ -38,6 +40,8 @@ private:
 	Cola c3;
 //	Lista l;
 //	Arbol a;
+=======
+>>>>>>> 03433581995fb52b8a8d518d883eb4dd9578bd15
 };
 
 #endif // GESTOR_HPP

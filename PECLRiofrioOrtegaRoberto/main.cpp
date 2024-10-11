@@ -1,10 +1,10 @@
-// #include <Gestor.hpp>
+#include <Gestor.hpp>
 #include <iostream>
 using namespace std;
 
 int main(int argc, char** argv)
 {
-	// Gestor gestor;
+	Gestor gestor;
 	char opcion;
 
 	do {
@@ -66,7 +66,6 @@ int main(int argc, char** argv)
 
 		case 'A':
 			// gestor.genera12Procesos();
-			break;
 		case 'B':
 			// gestor.muestraProcesos();
 			break;
@@ -138,6 +137,5 @@ int main(int argc, char** argv)
 			break;
 		}
 	} while(opcion != 'S');
-
 	return 0;
 }
