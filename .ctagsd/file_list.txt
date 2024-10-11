@@ -1,0 +1,13 @@
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\NodoPila.hpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\Pila.hpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\Cola.hpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\Gestor.hpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\Proceso.cpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\Proceso.hpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\Pila.cpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\Gestor.cpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\Cola.cpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\NodoCola.cpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\NodoCola.hpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\NodoPila.cpp
+C:\Users\ThinkPad\OneDrive\Documentos\EEDD2024\PECL-EEDD\PECLRiofrioOrtegaRoberto\main.cpp
