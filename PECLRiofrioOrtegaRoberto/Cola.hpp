@@ -11,6 +11,7 @@ public:
     void eliminar();
     void mostrar();
     Proceso verPrimero();
+	int getLongitud();
 
 private:
     pnodoCola primero, ultimo;

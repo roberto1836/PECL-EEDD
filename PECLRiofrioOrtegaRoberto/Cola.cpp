@@ -46,6 +46,10 @@ Proceso Cola::verPrimero(){
     return primero->valor;
 }
 
+int Cola::getLongitud(){
+    return this->longitud;
+}
+
 Cola::~Cola()
 {
     while(primero)
