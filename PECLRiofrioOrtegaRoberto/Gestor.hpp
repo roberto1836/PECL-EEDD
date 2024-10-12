@@ -2,13 +2,14 @@
 #define GESTOR_HPP
 #include "Pila.hpp"
 #include "Cola.hpp"
+#include "Proceso.hpp"
 class Gestor
 {
 
 public:
     Gestor();
     ~Gestor();
-<<<<<<< HEAD
+
 	int ProcesosEnPila(Pila p);
 	int ProcesosEnGPU0(Cola c);
 	int ProcesosEnGPU1(Cola c);
@@ -33,6 +34,7 @@ public:
 	void CasoN();
 	void CasoO();
 private:
+	Proceso v;
 	Pila p;
 	Cola c0;
 	Cola c1;
@@ -40,8 +42,7 @@ private:
 	Cola c3;
 //	Lista l;
 //	Arbol a;
-=======
->>>>>>> 03433581995fb52b8a8d518d883eb4dd9578bd15
+
 };
 
 #endif // GESTOR_HPP

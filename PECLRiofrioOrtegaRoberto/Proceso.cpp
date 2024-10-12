@@ -1,12 +1,8 @@
 #include "Proceso.hpp"
 
-<<<<<<< HEAD
+
 Proceso::Proceso() { prioridad = 1; }
-=======
-Proceso::Proceso()
-{
-    
-}
+
 
 void Proceso::crearProceso(int pid){
     this->prioridad = pid;
@@ -29,9 +25,4 @@ void Proceso::mostrar(){
 
 Proceso::~Proceso()
 {
-}
->>>>>>> 03433581995fb52b8a8d518d883eb4dd9578bd15
-
-void Proceso::mostrar() { cout << prioridad << endl; }
-Proceso::~Proceso() {
 }
