@@ -15,20 +15,21 @@ Gestor::ProcesosEnPila(Pila p){
 	return p.getLongitud();
 }
 Gestor::ProcesosEnGPU0(Cola c0){
-
+	return c0.getLongitud();
 }
 Gestor::ProcesosEnGPU1(Cola c1){
-
+	return c1.getLongitud();
 }
 Gestor::ProcesosEnGPU2(Cola c2){
-
+	return c2.getLongitud();
 }
 Gestor::ProcesosEnGPU3(Cola c3){
-
+	return c3.getLongitud();
 }
 //Gestor::ProcesosEnListasTiempoReal(Lista l){}
 //Gestor::ProcesosEnListaNormal(Lista l){}
 //Gestor::ProcesosEnArbol(){}
+
 void Gestor::CasoA(){
 	int pid = 300;
 	if (p.getLongitud() <= 48){
@@ -64,7 +65,6 @@ void Gestor::CasoG(){
 		c1.eliminar();
 		c2.eliminar();
 		c3.eliminar();
-		
 	}
 }
 Gestor::~Gestor()
