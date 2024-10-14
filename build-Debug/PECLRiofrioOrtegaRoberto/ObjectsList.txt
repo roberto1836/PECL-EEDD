@@ -1,1 +1,0 @@
-../build-Debug/PECLRiofrioOrtegaRoberto/Proceso.cpp.o ../build-Debug/PECLRiofrioOrtegaRoberto/Pila.cpp.o ../build-Debug/PECLRiofrioOrtegaRoberto/Gestor.cpp.o ../build-Debug/PECLRiofrioOrtegaRoberto/Cola.cpp.o ../build-Debug/PECLRiofrioOrtegaRoberto/NodoCola.cpp.o ../build-Debug/PECLRiofrioOrtegaRoberto/NodoPila.cpp.o ../build-Debug/PECLRiofrioOrtegaRoberto/main.cpp.o   
