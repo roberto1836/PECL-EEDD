@@ -1,11 +1,11 @@
 #include "Proceso.hpp"
 
 
-Proceso::Proceso() { prioridad = 1; }
+Proceso::Proceso() { PID = 1; }
 
 
 void Proceso::crearProceso(int pid){
-    this->prioridad = pid;
+    this->PID = pid;
     int num = rand() % 10;
     this->nombreUsuario = "user" + (0 + num);
     this->tipo = (rand() % 2);
@@ -20,7 +20,17 @@ bool Proceso::getVacio(){
 }
 
 void Proceso::mostrar(){
-    cout << "El proceso cuyo PID es "<< PID << "es de tipo " << tipo << endl;
+    string Tipo;
+    if(!tipo){
+        Tipo = "normal";
+    }else{
+        Tipo = "tiempo real";
+    }
+    cout << "\tEl proceso cuyo PID es "<< PID << " es de tipo " << Tipo << endl;
+}
+
+bool Proceso::getTipo(){
+    return tipo;
 }
 
 Proceso::~Proceso()

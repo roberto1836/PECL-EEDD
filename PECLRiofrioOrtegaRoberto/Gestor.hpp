@@ -10,17 +10,17 @@ public:
     Gestor();
     ~Gestor();
 
-	int ProcesosEnPila(Pila p);
-	int ProcesosEnGPU0(Cola c);
-	int ProcesosEnGPU1(Cola c);
-	int ProcesosEnGPU2(Cola c);
-	int ProcesosEnGPU3(Cola c);
+	int ProcesosEnPila();
+	int ProcesosEnGPU0();
+	int ProcesosEnGPU1();
+	int ProcesosEnGPU2();
+	int ProcesosEnGPU3();
 //	int ProcesosEnListaTiempoReal(Lista l);
 //	int ProcesosEnListaNormal(Lista l);
 //	int ProcesosEnArbol(Arbol a);
-	void CasoA();
-	void CasoB();
-	void CasoC();
+	void genera12Procesos();
+	void muestraProcesos();
+	void borraProcesosPila();
 	void CasoD();
 	void CasoE();
 	void CasoF();
@@ -34,12 +34,12 @@ public:
 	void CasoN();
 	void CasoO();
 private:
-	Proceso v;
 	Pila p;
 	Cola c0;
 	Cola c1;
 	Cola c2;
 	Cola c3;
+    int pid = 300;
 //	Lista l;
 //	Arbol a;
 

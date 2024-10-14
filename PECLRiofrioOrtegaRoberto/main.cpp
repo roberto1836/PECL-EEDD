@@ -10,10 +10,10 @@ int main(int argc, char** argv)
 	do {
 		cout << "\n\t--------------------------------------------------------------"
 				"--------\n";
-		cout << "\tProcesos en la pila -> " << 0 /*gestor.ProcesosEnPila()*/
-			 << "\n\tProcesos en las colas:\n \t\tGPU 0-> " << 0 /*gestor.ProcesosEnGPU0() */ << "\tGPU 1-> "
-			 << 0 /*gestor.ProcesosEnGPU1() */ << "\tGPU 2-> " << 0 /*gestor.ProcesosEnGPU2() */ << "\tGPU 3-> "
-			 << 0 /*gestor.ProcesosEnGPU3()*/
+		cout << "\tProcesos en la pila -> " << gestor.ProcesosEnPila()
+             << "\n\tProcesos en las colas:\n \t\tGPU 0-> " << gestor.ProcesosEnGPU0() << "\tGPU 1-> "
+			 << gestor.ProcesosEnGPU1() << "\tGPU 2-> " << gestor.ProcesosEnGPU2() << "\tGPU 3-> "
+			 << gestor.ProcesosEnGPU3()
 			 << " \n\tProcesos en las listas:\n \t\tNormal-> "
 			 << 0 /*gestor.ProcesosEnListaNormal()*/ << "\tTiempo Real-> " << 0 /*gestor.ProcesosEnListaTiempoReal()*/
 			 << "\n\tProcesos en el arbol -> " << 0							  /*gestor.ProcesosEnArbol()*/
@@ -59,18 +59,18 @@ int main(int argc, char** argv)
 		cout << "\tIndique la opcion deseada: ";
 		cin >> opcion;
 		opcion = toupper(opcion);
-		// system("clear");
-		system("cls");
+		system("clear");
+		//system("cls");
 
 		switch(opcion) {
 
 		case 'A':
-			// gestor.genera12Procesos();
+			gestor.genera12Procesos();
 		case 'B':
-			// gestor.muestraProcesos();
+			gestor.muestraProcesos();
 			break;
 		case 'C':
-			// gestor.borraProcesosPila();
+			gestor.borraProcesosPila();
 			break;
 		case 'D':
 			// gestor.encolarProcesos();
@@ -109,7 +109,6 @@ int main(int argc, char** argv)
 			// gestor.reiniciar();
 			break;
 		case 'P':
-			//...;
 			break;
 		case 'Q':
 			//...;
@@ -137,5 +136,6 @@ int main(int argc, char** argv)
 			break;
 		}
 	} while(opcion != 'S');
+    
 	return 0;
 }

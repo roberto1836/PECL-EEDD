@@ -1,55 +1,67 @@
 #include "Gestor.hpp"
 
 Gestor::Gestor(){
-	Pila p;
-	Proceso v;
-	Cola c0;
-	Cola c1;
-	Cola c2;
-	Cola c3;
 //	Lista l;
 //	Arbol a;
 }
 
-Gestor::ProcesosEnPila(Pila p){
+int Gestor::ProcesosEnPila(){
 	return p.getLongitud();
 }
-Gestor::ProcesosEnGPU0(Cola c0){
+int Gestor::ProcesosEnGPU0(){
 	return c0.getLongitud();
 }
-Gestor::ProcesosEnGPU1(Cola c1){
+int Gestor::ProcesosEnGPU1(){
 	return c1.getLongitud();
 }
-Gestor::ProcesosEnGPU2(Cola c2){
+int Gestor::ProcesosEnGPU2(){
 	return c2.getLongitud();
 }
-Gestor::ProcesosEnGPU3(Cola c3){
+int Gestor::ProcesosEnGPU3(){
 	return c3.getLongitud();
 }
 //Gestor::ProcesosEnListasTiempoReal(Lista l){}
 //Gestor::ProcesosEnListaNormal(Lista l){}
 //Gestor::ProcesosEnArbol(){}
 
-void Gestor::CasoA(){
-	int pid = 300;
-	if (p.getLongitud() <= 48){
-		for(int i=0; i = 12; i++){
+void Gestor::genera12Procesos(){
+	if (p.getLongitud() < 48){
+		for(int i=0; i < 12; i++){
+            Proceso v;
 			v.crearProceso(pid);
 			p.insertar(v);
 			pid++;
 		}
 	}
+}
+void Gestor::muestraProcesos(){
 	p.mostrar();
 }
-void Gestor::CasoB(){
-	p.mostrar();
-}
-void Gestor::CasoC(){
-	while(p.getLongitud() == 0)
-		p.extraer();
+void Gestor::borraProcesosPila(){
+	while(p.getLongitud() >= 1){
+        p.extraer();
+    }
 }
 void Gestor::CasoD(){
-	
+	while(p.getLongitud() >= 1){
+        if(!p.cima().getTipo()){
+            if(c0.getLongitud() < c1.getLongitud()){
+                c0.insertar(p.cima());
+                p.extraer();
+            }else{
+                c1.insertar(p.cima());
+                p.extraer();
+            }
+        }else{
+            if(c2.getLongitud() < c3.getLongitud()){
+                c2.insertar(p.cima());
+                p.extraer();
+            }else{
+                c3.insertar(p.cima());
+                p.extraer();
+            }
+        }
+    }
 }
 void Gestor::CasoE(){
 	c0.mostrar();

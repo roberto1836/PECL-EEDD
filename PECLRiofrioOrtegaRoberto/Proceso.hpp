@@ -11,6 +11,7 @@ public:
     bool getVacio();
     void setVacio(bool v);
     void crearProceso(int pid);
+    bool getTipo();
 private:
     bool tipo;
     int PID;
