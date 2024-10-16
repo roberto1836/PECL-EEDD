@@ -22,7 +22,7 @@ int Gestor::ProcesosEnGPU3(){
 }
 //Gestor::ProcesosEnListasTiempoReal(Lista l){}
 //Gestor::ProcesosEnListaNormal(Lista l){}
-//Gestor::ProcesosEnArbol(){}
+//Gestor::ProcesosEnArbol(Arbol a){}
 
 void Gestor::genera12Procesos(){
 	if (p.getLongitud() < 48){
@@ -72,7 +72,7 @@ void Gestor::CasoF(){
 	c3.mostrar();
 }
 void Gestor::CasoG(){
-	while(c0.getLongitud() == 0 & c1.getLongitud() == 0 & c2.getLongitud() == 0 & c3.getLongitud() == 0){
+	while(c0.getLongitud() >= 1 & c1.getLongitud() >= 1 & c2.getLongitud() >= 1 & c3.getLongitud() >= 1){
 		c0.eliminar();
 		c1.eliminar();
 		c2.eliminar();
