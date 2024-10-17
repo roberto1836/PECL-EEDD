@@ -21,10 +21,10 @@ public:
 	void genera12Procesos();
 	void muestraProcesos();
 	void borraProcesosPila();
-	void CasoD();
-	void CasoE();
-	void CasoF();
-	void CasoG();
+	void encolarProcesos();
+	void muestraProcesosGPUs0y1();
+	void muestraProcesosGPUs2y3();
+	void borraProcesosColas();
 	void CasoH();
 	void CasoI();
 	void CasoJ();
@@ -33,6 +33,8 @@ public:
 	void CasoM();
 	void CasoN();
 	void CasoO();
+    
+    
 private:
 	Pila p;
 	Cola c0;
