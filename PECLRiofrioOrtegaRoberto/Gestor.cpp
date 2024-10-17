@@ -22,7 +22,7 @@ int Gestor::ProcesosEnGPU3(){
 }
 //Gestor::ProcesosEnListasTiempoReal(Lista l){}
 //Gestor::ProcesosEnListaNormal(Lista l){}
-//Gestor::ProcesosEnArbol(){}
+//Gestor::ProcesosEnArbol(Arbol a){}
 
 void Gestor::genera12Procesos(){
 	if (p.getLongitud() < 48){
