@@ -42,44 +42,64 @@ void Gestor::borraProcesosPila(){
         p.extraer();
     }
 }
-void Gestor::CasoD(){
+void Gestor::encolarProcesos(){
 	while(p.getLongitud() >= 1){
-        if(!p.cima().getTipo()){
+        
+        Proceso procesoAux = p.cima();
+        int prioridad;
+        procesoAux.setEstado(1);
+        
+        if(procesoAux.getTipo()){
+            prioridad = rand() % 100;
+        }else{
+            prioridad = rand() % 39 - 19; 
+            prioridad = prioridad + 120;
+        }
+        
+        procesoAux.setPrioridad(prioridad);
+        
+    if(!procesoAux.getTipo()){
             if(c0.getLongitud() < c1.getLongitud()){
-                c0.insertar(p.cima());
+                c0.insertar(procesoAux);
                 p.extraer();
             }else{
-                c1.insertar(p.cima());
+                c1.insertar(procesoAux);
                 p.extraer();
             }
         }else{
             if(c2.getLongitud() < c3.getLongitud()){
-                c2.insertar(p.cima());
+                c2.insertar(procesoAux);
                 p.extraer();
             }else{
-                c3.insertar(p.cima());
+                c3.insertar(procesoAux);
                 p.extraer();
             }
         }
     }
 }
-void Gestor::CasoE(){
+void Gestor::muestraProcesosGPUs0y1(){
 	c0.mostrar();
 	c1.mostrar();
 }
-void Gestor::CasoF(){
+void Gestor::muestraProcesosGPUs2y3(){
 	c2.mostrar();
 	c3.mostrar();
 }
-void Gestor::CasoG(){
-	while(c0.getLongitud() >= 1 & c1.getLongitud() >= 1 & c2.getLongitud() >= 1 & c3.getLongitud() >= 1){
-		c0.eliminar();
-		c1.eliminar();
-		c2.eliminar();
-		c3.eliminar();
-	}
+
+void Gestor::borraProcesosColas(){
+	while(c0.getLongitud() >= 1){
+        c0.eliminar();
+    }
+    while(c1.getLongitud() >= 1){
+        c1.eliminar();
+    }
+    while(c2.getLongitud() >= 1){
+        c2.eliminar();
+    }
+    while(c3.getLongitud() >= 1){
+        c3.eliminar();
+    }
 }
 Gestor::~Gestor()
 {
 }
-

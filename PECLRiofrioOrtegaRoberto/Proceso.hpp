@@ -12,6 +12,11 @@ public:
     void setVacio(bool v);
     void crearProceso(int pid);
     bool getTipo();
+    bool getEstado();
+    void setEstado(bool e);
+    int getPrioridad();
+    void setPrioridad(int p);
+    
 private:
     bool tipo;
     int PID;
