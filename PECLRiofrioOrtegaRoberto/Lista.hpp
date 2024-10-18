@@ -6,10 +6,10 @@ class Lista
 public:
 	Lista();
 	~Lista();
-	void mostrar();
-	int verPrimero();
-	void insertar(Proceso v);
-	void eliminar();
+	void listarProcesos(Proceso v);
+	int cambiarPrioridadProcesos();
+	void buscarProcesos(Proceso v);
+	void finalizarProcesos();
 
 private:
 	

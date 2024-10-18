@@ -43,6 +43,7 @@ void Gestor::borraProcesosPila(){
     }
 }
 void Gestor::encolarProcesos(){
+	
 	while(p.getLongitud() >= 1){
         
         Proceso procesoAux = p.cima();
