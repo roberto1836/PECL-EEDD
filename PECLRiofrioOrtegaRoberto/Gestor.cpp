@@ -43,11 +43,12 @@ void Gestor::borraProcesosPila(){
     }
 }
 void Gestor::encolarProcesos(){
-	
+
 	while(p.getLongitud() >= 1){
         
+        
         Proceso procesoAux = p.cima();
-        int prioridad;
+		int prioridades;
         procesoAux.setEstado(1);
         
         if(procesoAux.getTipo()){

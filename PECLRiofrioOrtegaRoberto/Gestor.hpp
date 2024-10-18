@@ -41,6 +41,7 @@ private:
 	Cola c1;
 	Cola c2;
 	Cola c3;
+	Cola prioridad;
     int pid = 300;
 //	Lista l;
 //	Arbol a;
