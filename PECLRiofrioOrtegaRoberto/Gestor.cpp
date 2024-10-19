@@ -48,7 +48,7 @@ void Gestor::encolarProcesos(){
         
         
         Proceso procesoAux = p.cima();
-		int prioridades;
+		int prioridad;
         procesoAux.setEstado(1);
         
         if(procesoAux.getTipo()){
@@ -59,8 +59,8 @@ void Gestor::encolarProcesos(){
         }
         
         procesoAux.setPrioridad(prioridad);
-        
-    if(!procesoAux.getTipo()){
+
+        if(!procesoAux.getTipo()){
             if(c0.getLongitud() < c1.getLongitud()){
                 c0.insertar(procesoAux);
                 p.extraer();

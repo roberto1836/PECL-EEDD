@@ -10,12 +10,29 @@ Cola::Cola()
 void Cola::insertar(Proceso v){
     pnodoCola nuevo;
     nuevo = new NodoCola(v);
-    if(ultimo)
-        ultimo->siguiente = nuevo;
-    ultimo = nuevo;
-    
-    if(!primero)
+    if(primero){
+        if(primero->valor.getPrioridad() > nuevo->valor.getPrioridad()){
+            nuevo->siguiente = primero;
+            primero = nuevo;
+        }else{
+            pnodoCola aux = primero;
+            while(aux->siguiente && (aux->siguiente->valor.getPrioridad() < nuevo->valor.getPrioridad())){
+                    aux = aux->siguiente;
+            }
+            
+            if(aux->siguiente){
+                nuevo->siguiente = aux->siguiente;
+                aux->siguiente = nuevo;
+            }else{
+                ultimo->siguiente = nuevo;
+                ultimo = nuevo;
+            }
+        }
+    }else{
+        ultimo = nuevo;
         primero = nuevo;
+    }
+    
     longitud++;
 }
 

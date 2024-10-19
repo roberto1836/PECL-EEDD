@@ -1,6 +1,6 @@
 #ifndef LISTA_HPP
 #define LISTA_HPP
-
+#include "Proceso.hpp"
 class Lista
 {
 public:
