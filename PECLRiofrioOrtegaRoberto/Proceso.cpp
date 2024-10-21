@@ -1,13 +1,16 @@
 #include "Proceso.hpp"
 
 
-Proceso::Proceso() { PID = 1; }
+Proceso::Proceso() {
+        
+}
 
 
 void Proceso::crearProceso(int pid){
     this->PID = pid;
     int num = rand() % 10;
-    this->nombreUsuario = "user" + (0 + num);
+    strcpy(nombreUsuario, "user");
+    this->nombreUsuario[4] = ('0' + num);
     this->tipo = (rand() % 2);
 }
 
@@ -58,6 +61,18 @@ int Proceso::getPrioridad(){
 
 void Proceso::setPrioridad(int p){
     this->prioridad = p;
+}
+
+void Proceso::mostrarFila(){
+    cout << PID << "\t" << nombreUsuario <<"\t" << tipo << "\t" << estado << "\t" << prioridad << endl;
+}
+
+char* Proceso::getUsuario(){
+    return this->nombreUsuario;
+}
+
+int Proceso::getPID(){
+    return this->PID;
 }
 
 Proceso::~Proceso()
