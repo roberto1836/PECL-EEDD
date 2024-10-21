@@ -3,6 +3,9 @@
 #include "Pila.hpp"
 #include "Cola.hpp"
 #include "Proceso.hpp"
+#include "Lista.hpp"
+#include "NodoLista.hpp"
+
 class Gestor
 {
 
@@ -15,8 +18,8 @@ public:
 	int ProcesosEnGPU1();
 	int ProcesosEnGPU2();
 	int ProcesosEnGPU3();
-//	int ProcesosEnListaTiempoReal(Lista l);
-//	int ProcesosEnListaNormal(Lista l);
+	int ProcesosEnListaTiempoReal();
+	int ProcesosEnListaNormal();
 //	int ProcesosEnArbol(Arbol a);
 	void genera12Procesos();
 	void muestraProcesos();
@@ -25,14 +28,14 @@ public:
 	void muestraProcesosGPUs0y1();
 	void muestraProcesosGPUs2y3();
 	void borraProcesosColas();
-	void CasoH();
-	void CasoI();
-	void CasoJ();
-	void CasoK();
-	void CasoL();
-	void CasoM();
-	void CasoN();
-	void CasoO();
+	void enlistarProcesos();
+	void muestraProcesosNormal();
+	void muestraProcesosTiempoReal();
+	void buscarProcesos();
+	void buscarProcesoPorNombreUsuario();
+	void eliminarProcesoPorPID();
+	void cambiarPrioridadProcesoPorPID();
+	void reiniciar();
     
     
 private:
@@ -43,7 +46,8 @@ private:
 	Cola c3;
 	Cola prioridad;
     int pid = 300;
-//	Lista l;
+	Lista ln;
+	Lista lt;
 //	Arbol a;
 
 };

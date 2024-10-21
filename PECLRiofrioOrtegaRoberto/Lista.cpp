@@ -1,5 +1,5 @@
 #include "Lista.hpp"
-
+#include "Gestor.hpp"
 Lista::Lista()
 {
     primero = NULL;
@@ -76,6 +76,10 @@ void Lista::eliminarUltimo(){
         delete p;
     }
     longitud--;
+}
+
+int Lista::getLongitud(){
+    return this->longitud;
 }
 
 Lista::~Lista()

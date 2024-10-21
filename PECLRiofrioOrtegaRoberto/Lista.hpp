@@ -8,13 +8,14 @@ public:
 	~Lista();
 	void listarProcesos(Proceso v);
 	int cambiarPrioridadProcesos();
-	void buscarProcesos(Proceso v);
+	void buscarProcesos();
 	void finalizarProcesos();
     
     void insertarIZQ(Proceso v);
     void insertarDER(Proceso v);
     void eliminarPrimero();
     void eliminarUltimo();
+	int getLongitud();
     
     Proceso verPrimero();
     Proceso verUltimo();

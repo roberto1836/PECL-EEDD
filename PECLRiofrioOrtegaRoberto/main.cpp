@@ -86,28 +86,28 @@ int main(int argc, char** argv)
 			gestor.borraProcesosColas();
 			break;
 		case 'H':
-			// gestor.enlistarProcesos();
+			gestor.enlistarProcesos();
 			break;
 		case 'I':
-			// gestor.muestraProcesosNormal();
+			//gestor.muestraProcesosNormal();
 			break;
 		case 'J':
-			// gestor.muestraProcesosTiempoReal();
+			//gestor.muestraProcesosTiempoReal();
 			break;
 		case 'K':
-			// gestor.buscarProcesos();
+			gestor.buscarProcesos();
 			break;
 		case 'L':
 			// gestor.buscarProcesoPorNombreUsuario();
 			break;
 		case 'M':
-			// gestor.eliminarProcesoPorPID();
+			gestor.eliminarProcesoPorPID();
 			break;
 		case 'N':
-			// gestor.cambiarPrioridadProcesoPorPID();
+			gestor.cambiarPrioridadProcesoPorPID();
 			break;
 		case 'O':
-			// gestor.reiniciar();
+			gestor.reiniciar();
 			break;
 		case 'P':
 			break;
