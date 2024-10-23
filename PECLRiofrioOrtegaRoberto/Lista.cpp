@@ -1,5 +1,8 @@
 #include "Lista.hpp"
-#include "Gestor.hpp"
+#include <iostream>
+
+using namespace std;
+
 Lista::Lista()
 {
     primero = NULL;
@@ -80,6 +83,16 @@ void Lista::eliminarUltimo(){
 
 int Lista::getLongitud(){
     return this->longitud;
+}
+
+void Lista::muestraProcesos(Lista l){
+	pnodoLista aux;
+	aux = primero;
+	cout << "PID " << "Nombre de usuario " << "Tipo de proceso " << "Estado de proceso " << "Prioridad" << endl;
+	for (int i = 0; i = l.getLongitud(); i++){
+		cout << aux->valor.getPID << aux->valor.getNombreUsuario << aux->valor.getTipo() << aux->valor.getEstado() << aux-> valor.getPrioridad();
+		aux->siguiente;
+	}
 }
 
 Lista::~Lista()

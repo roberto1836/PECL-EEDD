@@ -60,6 +60,14 @@ void Proceso::setPrioridad(int p){
     this->prioridad = p;
 }
 
+string Proceso::getNombreUsuario(){
+	return this->nombreUsuario;
+}
+
+int Proceso::getPID(){
+	return this->PID;
+}
+
 Proceso::~Proceso()
 {
 }

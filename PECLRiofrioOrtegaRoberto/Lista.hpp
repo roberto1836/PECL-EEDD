@@ -1,15 +1,17 @@
-#ifndef LISTA_HPP
+ #ifndef LISTA_HPP
 #define LISTA_HPP
 #include "NodoLista.hpp"
+
 class Lista
 {
 public:
 	Lista();
 	~Lista();
-	void listarProcesos(Proceso v);
+	void listarProceso(Proceso v);
 	int cambiarPrioridadProcesos();
 	void buscarProcesos();
 	void finalizarProcesos();
+	void muestraProcesos(Lista l);
     
     void insertarIZQ(Proceso v);
     void insertarDER(Proceso v);

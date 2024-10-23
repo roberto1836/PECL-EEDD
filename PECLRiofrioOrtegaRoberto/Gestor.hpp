@@ -4,7 +4,6 @@
 #include "Cola.hpp"
 #include "Proceso.hpp"
 #include "Lista.hpp"
-#include "NodoLista.hpp"
 
 class Gestor
 {
@@ -18,7 +17,7 @@ public:
 	int ProcesosEnGPU1();
 	int ProcesosEnGPU2();
 	int ProcesosEnGPU3();
-	int ProcesosEnListaTiempoReal();
+	int ProcesosEnListasTiempoReal();
 	int ProcesosEnListaNormal();
 //	int ProcesosEnArbol(Arbol a);
 	void genera12Procesos();

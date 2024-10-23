@@ -1,5 +1,6 @@
 #include "Gestor.hpp"
 
+
 Gestor::Gestor(){
 }
 
@@ -24,6 +25,7 @@ int Gestor::ProcesosEnListasTiempoReal(){
 int Gestor::ProcesosEnListaNormal(){
 	return lt.getLongitud();
 }
+
 //Gestor::ProcesosEnArbol(Arbol a){}
 
 void Gestor::genera12Procesos(){
@@ -36,14 +38,17 @@ void Gestor::genera12Procesos(){
 		}
 	}
 }
+
 void Gestor::muestraProcesos(){
 	p.mostrar();
 }
+
 void Gestor::borraProcesosPila(){
 	while(p.getLongitud() >= 1){
         p.extraer();
     }
 }
+
 void Gestor::encolarProcesos(){
 
 	while(p.getLongitud() >= 1){
@@ -81,10 +86,12 @@ void Gestor::encolarProcesos(){
         }
     }
 }
+
 void Gestor::muestraProcesosGPUs0y1(){
 	c0.mostrar();
 	c1.mostrar();
 }
+
 void Gestor::muestraProcesosGPUs2y3(){
 	c2.mostrar();
 	c3.mostrar();
@@ -104,12 +111,13 @@ void Gestor::borraProcesosColas(){
         c3.eliminar();
     }
 }
+
 void Gestor::enlistarProcesos(){
 	
 	while(c0.getLongitud() >=1){
 		Proceso aux = c0.verPrimero();
 		aux.setEstado(0);
-		if(ln.getLongitud() == 0){
+		if(!primero){
 			ln.insertarIZQ(aux);
 			c0.eliminar();
 		}else{
@@ -121,7 +129,7 @@ void Gestor::enlistarProcesos(){
 	while(c1.getLongitud() >=1){
 		Proceso aux = c0.verPrimero();
 		aux.setEstado(0);
-		if(ln.getLongitud() == 0){
+		if(!primero){
 			ln.insertarIZQ(aux);
 			c1.eliminar();
 		}else{
@@ -133,7 +141,7 @@ void Gestor::enlistarProcesos(){
 	while(c2.getLongitud() >=1){
 		Proceso aux = c0.verPrimero();
 		aux.setEstado(0);
-		if(lt.getLongitud() == 0){
+		if(!primero){
 			lt.insertarIZQ(aux);
 			c2.eliminar();
 		}else{
@@ -145,7 +153,7 @@ void Gestor::enlistarProcesos(){
 	while(c3.getLongitud() >=1){
 		Proceso aux = c0.verPrimero();
 		aux.setEstado(0);
-		if(lt.getLongitud() == 0){
+		if(!primero){
 			lt.insertarIZQ(aux);
 			c3.eliminar();
 		}else{
@@ -155,18 +163,15 @@ void Gestor::enlistarProcesos(){
 	}
 }
 
-//void Gestor::muestraProcesosNormal(){
-	//int index = 0;
-	//for (int i = 0; i = ln.getLongitud(); i++){
-		//for (int j = 0; j < 3; ++j) {
-			//table[i][j] = data[index++];}}}
+void Gestor::muestraProcesosNormal(){
+	Lista ln;
+	ln.muestraProcesos(Lista ln);
+}
 
-//void Gestor::muestraProcesosTiempoReal(){
-	//int index = 0;
-	//for (int i = 0; i = lt.getLongitud(); i++){
-		//for (int j = 0; j < 3; ++j) {
-			//table[i][j] = data[index++];}}}
-
+void Gestor::muestraProcesosTiempoReal(){
+	Lista lt;
+	lt.muestraProcesos(Lista lt);
+}
 void Lista::buscarProcesos(){
 	int minimo = 0;
 	int maximo = 0;
@@ -196,9 +201,10 @@ void Lista::buscarProcesos(){
 
 //void Gestor::buscarProcesoPorNombreUsuario(){}
 
+
 void Gestor::eliminarProcesoPorPID(){
 	int num_prioridad;
-	cout << "Que numero de prioridad quiere eliminar" 
+	cout << "Que numero de prioridad quiere eliminar";
 	cin >> num_prioridad;
 	for (int i = 0; i = ln.getLongitud(); i++){
 		if(primero -> v.getPrioridad == num_prioridad){
@@ -223,7 +229,8 @@ void Gestor::eliminarProcesoPorPID(){
 
 void Gestor::cambiarPrioridadProcesoPorPID(){
 	int num_prioridad;
-	cout << "Que numero de prioridad quiere eliminar" 
+	int nueva-prioridad;
+	cout << "Que numero de prioridad quiere eliminar"; 
 	cin >> num_prioridad;
 	for (int i = 0; i = ln.getLongitud(); i++){
 		if(primero -> v.getPrioridad != num_prioridad){
