@@ -164,107 +164,45 @@ void Gestor::enlistarProcesos(){
 }
 
 void Gestor::muestraProcesosNormal(){
-	Lista ln;
-	ln.muestraProcesos(Lista ln);
+	ln.muestraProcesos();
 }
 
 void Gestor::muestraProcesosTiempoReal(){
-	Lista lt;
-	lt.muestraProcesos(Lista lt);
+	lt.muestraProcesos();
 }
-void Lista::buscarProcesos(){
-	int minimo = 0;
-	int maximo = 0;
-	pnodoLista aux;
-	aux = primero;
-	for(int i = 0; i = ln.getLongitud(); i++){
-		if(primero->valor.getPrioridad() <= aux->valor.getPrioridad()){
-			aux -> siguiente;
-			minimo = primero-> valor.getPrioridad();
-		}else{
-			primero -> aux;
-			minimo = primero -> valor.getPrioridad();
-		}
-	}
-	for(int i = 0; i = lt.getLongitud(); i++){
-		if(primero->valor.getPrioridad() >= aux->valor.getPrioridad()){
-			aux -> siguiente;
-			maximo = primero-> valor.getPrioridad();
-		}else{
-			primero -> aux;
-			maximo = primero -> valor.getPrioridad();
-		}
-	}
-	cout << "El proceso normal con menor prioridad es " << minimo;
-	cout << "El proceso en tiempo real con mayor prioridad es " << maximo;
+void Gestor::buscarProcesos(){
+	ln.buscarProcesos();
+	lt.buscarProcesos();
 }
 
 //void Gestor::buscarProcesoPorNombreUsuario(){}
 
 
 void Gestor::eliminarProcesoPorPID(){
-	int num_prioridad;
-	cout << "Que numero de prioridad quiere eliminar";
-	cin >> num_prioridad;
-	for (int i = 0; i = ln.getLongitud(); i++){
-		if(primero -> v.getPrioridad == num_prioridad){
-			cout << "El proceso existe";
-			ln.eliminarPrimero();
-			p.insertar(v);
-			v.setEstado(1);
-		}else{
-			primero -> siguiente
-		}
-	}
-	for (int i = 0; i = lt.getLongitud(); i++){
-		if(primero -> v.getPrioridad == num_prioridad){
-			ln.eliminarPrimero();
-			p.insertar(v);
-			v.setEstado(1);
-		}else{
-			primero -> siguiente;
-		}
-	}
+	Proceso v = ln.finalizarProcesos();
+	p.insertar(v);
+	Proceso v2 = lt.finalizarProcesos();
+	p.insertar(v2);
 }
 
 void Gestor::cambiarPrioridadProcesoPorPID(){
-	int num_prioridad;
-	int nueva-prioridad;
-	cout << "Que numero de prioridad quiere eliminar"; 
-	cin >> num_prioridad;
-	for (int i = 0; i = ln.getLongitud(); i++){
-		if(primero -> v.getPrioridad != num_prioridad){
-			primero -> siguiente;
-		}else{
-			cout << "El proceso existe, inserte la nueva prioridad ";
-			cin >> nueva_prioridad;
-			v.setPrioridad(nueva_prioridad);
-		}
-	}
-	for (int i = 0; i = lt.getLongitud(); i++){
-		if(primero -> v.getPrioridad != num_prioridad){
-			primero -> siguiente;
-		}else{
-			cout << "El proceso existe, inserte la nueva prioridad ";
-			cin >> nueva_prioridad;
-			v.setPrioridad(nueva_prioridad);
-		}
-	}
+	ln.cambiarPrioridadProcesos();
+	lt.cambiarPrioridadProcesos();
 }
 
 void Gestor::reiniciar(){
-	Gestor.borraProcesosPila();
-	Gestor.borraProcesosColas();
+	borraProcesosPila();
+	borraProcesosColas();
 	
-	while(ln.getLongitud >= 1){
+	while(ln.getLongitud() >= 1){
 		ln.eliminarUltimo();
-		if(ln.getLongitud == 1)
+		if(ln.getLongitud() == 1)
 			ln.eliminarPrimero();
 	}
 	
-	while(lt.getLongitud >= 1){
+	while(lt.getLongitud() >= 1){
 		lt.eliminarUltimo();
-		if(lt.getLongitud == 1)
+		if(lt.getLongitud() == 1)
 			lt.eliminarPrimero();
 	}
 }

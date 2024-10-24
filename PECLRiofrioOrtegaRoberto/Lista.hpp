@@ -10,8 +10,9 @@ public:
 	void listarProceso(Proceso v);
 	int cambiarPrioridadProcesos();
 	void buscarProcesos();
-	void finalizarProcesos();
-	void muestraProcesos(Lista l);
+	Proceso finalizarProcesos();
+	void muestraProcesos();
+	
     
     void insertarIZQ(Proceso v);
     void insertarDER(Proceso v);
