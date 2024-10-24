@@ -1,8 +1,6 @@
 #include "Gestor.hpp"
 
 Gestor::Gestor(){
-//	Lista l;
-//	Arbol a;
 }
 
 int Gestor::ProcesosEnPila(){
@@ -145,9 +143,56 @@ void Gestor::muestraProcesosTiempoReal(){
 }
 void Gestor::buscarProcesos(){
     cout << "Normal menor prioridad -> \t\t";
-    Lnormales.menorPrioridad().mostrar();
+    
+    if(Lnormales.getLongitud() < 1){
+        return;
+    }else{
+        Proceso m;
+        Lista laux;
+        m = Lnormales.verPrimero();
+        laux.insertarIZQ(Lnormales.verPrimero());
+        Lnormales.eliminarPrimero();
+        while(Lnormales.getLongitud() > 0){
+            if(m.getPrioridad() < Lnormales.verPrimero().getPrioridad()){
+                m = Lnormales.verPrimero();
+            }
+            laux.insertarIZQ(Lnormales.verPrimero());
+            Lnormales.eliminarPrimero();
+        }
+        
+        while(laux.getLongitud() > 0){
+            Lnormales.insertarIZQ(laux.verPrimero());
+            laux.eliminarPrimero();
+        }
+        
+        m.mostrar();
+    }
+    
     cout << "Tiempo real mayor prioridad -> \t\t";
-    LtiempoReal.mayorPrioridad().mostrar();
+    
+    if(LtiempoReal.getLongitud() < 1){
+        return;
+    }else{
+        Proceso m;
+        Lista laux;
+        m = LtiempoReal.verPrimero();
+        laux.insertarIZQ(LtiempoReal.verPrimero());
+        LtiempoReal.eliminarPrimero();
+        while(LtiempoReal.getLongitud() > 0){
+            if(m.getPrioridad() > LtiempoReal.verPrimero().getPrioridad()){
+                m = LtiempoReal.verPrimero();
+            }
+            laux.insertarIZQ(LtiempoReal.verPrimero());
+            LtiempoReal.eliminarPrimero();
+        }
+        
+        while(laux.getLongitud() > 0){
+            LtiempoReal.insertarIZQ(laux.verPrimero());
+            laux.eliminarPrimero();
+        }
+        
+        m.mostrar();
+    }
 }
 
 void Gestor::buscarProcesoPorNombreUsuario(){
@@ -155,7 +200,48 @@ void Gestor::buscarProcesoPorNombreUsuario(){
     cout << "Introduce un nombre de usuario: ";
     cin >> o;
     
-    Lnormales.buscarProcesosUsuario(o);
+    
+    if(Lnormales.getLongitud() < 1){
+        return;
+    }else{
+        Lista laux;
+        laux.insertarIZQ(Lnormales.verPrimero());
+        Lnormales.eliminarPrimero();
+        while(Lnormales.getLongitud() > 0){
+            if(o == Lnormales.verPrimero().getUsuario()){
+                Lnormales.verPrimero().mostrarFila();
+            }
+            laux.insertarIZQ(Lnormales.verPrimero());
+            Lnormales.eliminarPrimero();
+        }
+        
+        while(laux.getLongitud() > 0){
+            Lnormales.insertarIZQ(laux.verPrimero());
+            laux.eliminarPrimero();
+        }
+    }
+    
+    
+    if(LtiempoReal.getLongitud() < 1){
+        return;
+    }else{
+        Lista laux;
+        laux.insertarIZQ(LtiempoReal.verPrimero());
+        LtiempoReal.eliminarPrimero();
+        while(LtiempoReal.getLongitud() > 0){
+            if(o == LtiempoReal.verPrimero().getUsuario()){
+                LtiempoReal.verPrimero().mostrarFila();
+            }
+            laux.insertarIZQ(LtiempoReal.verPrimero());
+            LtiempoReal.eliminarPrimero();
+        }
+        
+        while(laux.getLongitud() > 0){
+            LtiempoReal.insertarIZQ(laux.verPrimero());
+            laux.eliminarPrimero();
+        }
+    }
+    
 }
 
 void Gestor::eliminarProcesoPorPID(){
@@ -163,8 +249,48 @@ void Gestor::eliminarProcesoPorPID(){
     cout << "Introduce PID: ";
     cin >> o;
     
-    Lnormales.borrarProcesosPID(o);
-    LtiempoReal.borrarProcesosPID(o);
+    if(Lnormales.getLongitud() < 1){
+        return;
+    }else{
+        Lista laux;
+        laux.insertarIZQ(Lnormales.verPrimero());
+        Lnormales.eliminarPrimero();
+        while(Lnormales.getLongitud() > 0){
+            if(o == Lnormales.verPrimero().getPID()){
+                Lnormales.verPrimero().mostrarFila();
+            }else{
+                laux.insertarIZQ(Lnormales.verPrimero());
+            }
+
+            Lnormales.eliminarPrimero();
+        }
+        
+        while(laux.getLongitud() > 0){
+            Lnormales.insertarIZQ(laux.verPrimero());
+            laux.eliminarPrimero();
+        }
+    }
+    
+    if(LtiempoReal.getLongitud() < 1){
+        return;
+    }else{
+        Lista laux;
+        laux.insertarIZQ(LtiempoReal.verPrimero());
+        LtiempoReal.eliminarPrimero();
+        while(LtiempoReal.getLongitud() > 0){
+            if(o == LtiempoReal.verPrimero().getPID()){
+                LtiempoReal.verPrimero().mostrarFila();
+            }else{
+                laux.insertarIZQ(LtiempoReal.verPrimero());
+            }
+            LtiempoReal.eliminarPrimero();
+        }
+        
+        while(laux.getLongitud() > 0){
+            LtiempoReal.insertarIZQ(laux.verPrimero());
+            laux.eliminarPrimero();
+        }
+    }
 }
 
 void Gestor::cambiarPrioridadProcesoPorPID(){
@@ -172,11 +298,63 @@ void Gestor::cambiarPrioridadProcesoPorPID(){
     cout << "Introduce PID: ";
     cin >> o;
     
-    Proceso *pro = Lnormales.buscarProcesoPID(o);
-    int prio;
-    cout << "Introduce prio: ";
-    cin >> prio;
-    pro->setPrioridad(prio);
+    if(Lnormales.getLongitud() < 1){
+        return;
+    }else{
+        Lista laux;
+        laux.insertarIZQ(Lnormales.verPrimero());
+        Lnormales.eliminarPrimero();
+        while(Lnormales.getLongitud() > 0){
+            if(o == Lnormales.verPrimero().getPID()){
+                Lnormales.verPrimero().mostrarFila();
+                int prio;
+                cout << "Introduce prio: ";
+                cin >> prio;
+                
+                Proceso m = Lnormales.verPrimero();
+                m.setPrioridad(prio);
+                laux.insertarIZQ(m);
+            }else{
+                laux.insertarIZQ(Lnormales.verPrimero());
+            }
+
+            Lnormales.eliminarPrimero();
+        }
+        
+        while(laux.getLongitud() > 0){
+            Lnormales.insertarIZQ(laux.verPrimero());
+            laux.eliminarPrimero();
+        }
+    }
+    
+    if(LtiempoReal.getLongitud() < 1){
+        return;
+    }else{
+        Lista laux;
+        laux.insertarIZQ(LtiempoReal.verPrimero());
+        LtiempoReal.eliminarPrimero();
+        while(LtiempoReal.getLongitud() > 0){
+            if(o == LtiempoReal.verPrimero().getPID()){
+                LtiempoReal.verPrimero().mostrarFila();
+                
+                int prio;
+                cout << "Introduce prio: ";
+                cin >> prio;
+                
+                Proceso m = LtiempoReal.verPrimero();
+                m.setPrioridad(prio);
+                laux.insertarIZQ(m);
+            }else{
+                laux.insertarIZQ(LtiempoReal.verPrimero());
+            }
+            LtiempoReal.eliminarPrimero();
+        }
+        
+        while(laux.getLongitud() > 0){
+            LtiempoReal.insertarIZQ(laux.verPrimero());
+            laux.eliminarPrimero();
+        }
+    }
 }
 
 void Gestor::reiniciar(){
