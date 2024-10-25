@@ -16,8 +16,8 @@ public:
     void setEstado(bool e);
     int getPrioridad();
     void setPrioridad(int p);
-	string getNombreUsuario();
-	int getPID();
+	char* getUsuario();
+
     
 private:
     bool tipo;

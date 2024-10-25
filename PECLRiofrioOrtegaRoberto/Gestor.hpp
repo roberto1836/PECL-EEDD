@@ -17,7 +17,7 @@ public:
 	int ProcesosEnGPU1();
 	int ProcesosEnGPU2();
 	int ProcesosEnGPU3();
-	int ProcesosEnListasTiempoReal();
+	int ProcesosEnListaTiempoReal();
 	int ProcesosEnListaNormal();
 //	int ProcesosEnArbol(Arbol a);
 	void genera12Procesos();
