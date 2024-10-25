@@ -19,20 +19,19 @@ int Gestor::ProcesosEnGPU2(){
 int Gestor::ProcesosEnGPU3(){
 	return c3.getLongitud();
 }
-int Gestor::ProcesosEnListasTiempoReal(){
-	return ln.getLongitud();
-}
-int Gestor::ProcesosEnListaNormal(){
-	return lt.getLongitud();
-}
 
-//Gestor::ProcesosEnArbol(Arbol a){}
+int Gestor::ProcesosEnListaNormal(){
+    return Lnormales.getLongitud();
+}
+int Gestor::ProcesosEnListaTiempoReal(){
+    return LtiempoReal.getLongitud();
+}
 
 void Gestor::genera12Procesos(){
 	if (p.getLongitud() < 48){
 		for(int i=0; i < 12; i++){
             Proceso v;
-			v.crearProceso(pid);
+            v.crearProceso(pid);
 			p.insertar(v);
 			pid++;
 		}
@@ -56,7 +55,7 @@ void Gestor::encolarProcesos(){
         
         Proceso procesoAux = p.cima();
 		int prioridad;
-        procesoAux.setEstado(1);
+        procesoAux.setEstado(0);
         
         if(procesoAux.getTipo()){
             prioridad = rand() % 100;
@@ -88,12 +87,16 @@ void Gestor::encolarProcesos(){
 }
 
 void Gestor::muestraProcesosGPUs0y1(){
+    cout << "\tGPU0: \n";
 	c0.mostrar();
+    cout << "\tGPU1: \n";
 	c1.mostrar();
 }
 
 void Gestor::muestraProcesosGPUs2y3(){
+    cout << "\tGPU2: \n";
 	c2.mostrar();
+    cout << "\tGPU3: \n";
 	c3.mostrar();
 }
 
@@ -113,98 +116,126 @@ void Gestor::borraProcesosColas(){
 }
 
 void Gestor::enlistarProcesos(){
-	
-	while(c0.getLongitud() >=1){
-		Proceso aux = c0.verPrimero();
-		aux.setEstado(0);
-		if(!primero){
-			ln.insertarIZQ(aux);
-			c0.eliminar();
-		}else{
-			ln.insertarDER(aux);
-			c0.eliminar();
-		}
-	}
-	
-	while(c1.getLongitud() >=1){
-		Proceso aux = c0.verPrimero();
-		aux.setEstado(0);
-		if(!primero){
-			ln.insertarIZQ(aux);
-			c1.eliminar();
-		}else{
-			ln.insertarDER(aux);
-			c1.eliminar();
-		}
-	}
-	
-	while(c2.getLongitud() >=1){
-		Proceso aux = c0.verPrimero();
-		aux.setEstado(0);
-		if(!primero){
-			lt.insertarIZQ(aux);
-			c2.eliminar();
-		}else{
-			lt.insertarDER(aux);
-			c2.eliminar();
-		}
-	}
-	
-	while(c3.getLongitud() >=1){
-		Proceso aux = c0.verPrimero();
-		aux.setEstado(0);
-		if(!primero){
-			lt.insertarIZQ(aux);
-			c3.eliminar();
-		}else{
-			lt.insertarDER(aux);
-			c3.eliminar();
-		}
-	}
+    while(c0.getLongitud() >= 1){
+        Proceso p = c0.verPrimero();
+        p.setEstado(1);
+        Lnormales.insertarIZQ(p);
+        c0.eliminar();
+    }
+    
+    while(c1.getLongitud() >= 1){        
+        Proceso p = c1.verPrimero();
+        p.setEstado(1);
+        Lnormales.insertarIZQ(p);
+        c1.eliminar();
+    }
+    
+    while(c2.getLongitud() >= 1){
+        Proceso p = c2.verPrimero();
+        p.setEstado(1);
+        LtiempoReal.insertarIZQ(p);
+        c2.eliminar();
+    }
+    
+    while(c3.getLongitud() >= 1){
+        Proceso p = c3.verPrimero();
+        p.setEstado(1);
+        LtiempoReal.insertarIZQ(p);
+        c3.eliminar();
+    }
 }
 
 void Gestor::muestraProcesosNormal(){
-	ln.muestraProcesos();
+    cout << "\tPID\tUsuario\tTipo\tEstado\t\tPrioridad" << endl;
+    Lnormales.mostrar();
 }
 
 void Gestor::muestraProcesosTiempoReal(){
-	lt.muestraProcesos();
+    cout << "\tPID\tUsuario\tTipo\tEstado\t\tPrioridad" << endl;
+    LtiempoReal.mostrar();
 }
 void Gestor::buscarProcesos(){
-	ln.buscarProcesos();
-	lt.buscarProcesos();
+    cout << "\tNormal menor prioridad -> \t\t";
+    Proceso pro = Lnormales.menorPrioridad();
+    
+    string estado = "parado";
+    if(pro.getEstado())
+        estado = "ejecucion";
+        
+    string tipo = "normal";
+    if(pro.getTipo())
+        tipo = "tiempo real";
+    
+    cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
+    << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
+    
+    cout << "\tTiempo real mayor prioridad -> \t\t";
+    pro = LtiempoReal.mayorPrioridad();
+    
+    estado = "parado";
+    if(pro.getEstado())
+        estado = "ejecucion";
+        
+    tipo = "normal";
+    if(pro.getTipo())
+        tipo = "tiempo real";
+    
+    cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
+    << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
+ 
 }
 
-//void Gestor::buscarProcesoPorNombreUsuario(){}
-
+void Gestor::buscarProcesoPorNombreUsuario(){
+    string o;
+    cout << "\tIntroduce un nombre de usuario: ";
+    cin >> o;
+    cout << "\tPID\tUsuario\tTipo\tEstado\t\tPrioridad" << endl;
+    Lnormales.buscarProcesosUsuario(o);
+    LtiempoReal.buscarProcesosUsuario(o);
+}
 
 void Gestor::eliminarProcesoPorPID(){
-	Proceso v = ln.finalizarProcesos();
-	p.insertar(v);
-	Proceso v2 = lt.finalizarProcesos();
-	p.insertar(v2);
+    int o;
+    cout << "\tIntroduce PID: ";
+    cin >> o;
+    Proceso pro = Lnormales.borrarProcesosPID(o);
+    if(pro.getVacio()){
+        pro = LtiempoReal.borrarProcesosPID(o);
+    }
+    
+    if(!pro.getVacio()){
+        cout << "\tPID\tUsuario\tTipo\tEstado\tPrioridad" << endl;
+        pro.mostrar();
+        cout << endl;
+        pro.setEstado(0);
+        pro.mostrar();
+        p.insertar(pro);
+    }
+        
 }
 
 void Gestor::cambiarPrioridadProcesoPorPID(){
-	ln.cambiarPrioridadProcesos();
-	lt.cambiarPrioridadProcesos();
+    int o;
+    cout << "\tIntroduce PID: ";
+    cin >> o;
+    
+    Proceso *pro = Lnormales.buscarProcesoPID(o);
+    int prio;
+    cout << "\tIntroduce prio: ";
+    cin >> prio;
+    pro->setPrioridad(prio);
 }
 
 void Gestor::reiniciar(){
-	borraProcesosPila();
-	borraProcesosColas();
-	
-	while(ln.getLongitud() >= 1){
-		ln.eliminarUltimo();
-		if(ln.getLongitud() == 1)
-			ln.eliminarPrimero();
-	}
-	
-	while(lt.getLongitud() >= 1){
-		lt.eliminarUltimo();
-		if(lt.getLongitud() == 1)
-			lt.eliminarPrimero();
-	}
+    borraProcesosPila();
+    borraProcesosColas();
+    
+    while(Lnormales.getLongitud() > 0){
+        Lnormales.eliminarPrimero();
+    }
+    while(LtiempoReal.getLongitud() > 0){
+        LtiempoReal.eliminarPrimero();
+    }
 }
 
 Gestor::~Gestor()

@@ -1,13 +1,16 @@
 #include "Proceso.hpp"
 
 
-Proceso::Proceso() { PID = 1; }
+Proceso::Proceso() {
+        
+}
 
 
 void Proceso::crearProceso(int pid){
     this->PID = pid;
     int num = rand() % 10;
-    this->nombreUsuario = "user" + (0 + num);
+    strcpy(nombreUsuario, "user");
+    this->nombreUsuario[4] = ('0' + num);
     this->tipo = (rand() % 2);
 }
 
@@ -27,16 +30,17 @@ void Proceso::mostrar(){
         Tipo = "tiempo real";
     }
     
-    cout << "\tEl proceso cuyo PID es "<< PID << " es de tipo " << Tipo;
-    
-    
-    if(true){
-        string e = "parado";
-        if(estado){
-            e = "ejecucion";
-        }
-        cout << ", su estado es " << e << " y su prioridad es: " << prioridad;
+    string e = "parado";
+    if(estado){
+        e = "ejecucion";
+        cout << "\t" << PID << "\t" << nombreUsuario <<"\t" << Tipo << "\t" << e << "\t" << prioridad;
+
+    }else{
+        cout << "\tEl proceso cuyo PID es "<< PID << " es de tipo " << Tipo;
+        if(prioridad != 0)
+            cout << ", su estado es " << e << " y su prioridad es: " << prioridad;
     }
+
     cout << endl;
 }
 
@@ -60,12 +64,13 @@ void Proceso::setPrioridad(int p){
     this->prioridad = p;
 }
 
-string Proceso::getNombreUsuario(){
-	return this->nombreUsuario;
+char* Proceso::getUsuario(){
+    return this->nombreUsuario;
 }
 
 int Proceso::getPID(){
-	return this->PID;
+    return this->PID;
+
 }
 
 Proceso::~Proceso()

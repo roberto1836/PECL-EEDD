@@ -78,71 +78,112 @@ void Lista::eliminarUltimo(){
     longitud--;
 }
 
+void Lista::mostrar(){
+    if(longitud < 1)
+        return;
+    pnodoLista aux = primero;
+    aux->valor.mostrar();
+    while(aux->siguiente != NULL){
+        aux->siguiente->valor.mostrar();
+        aux = aux->siguiente;
+    }
+}
+
 int Lista::getLongitud(){
-    return this->longitud;
+    return longitud;
+}
+    
+Proceso Lista::menorPrioridad(){
+    if(longitud < 1){
+        Proceso p;
+        p.setVacio(1);
+        return p;
+    }
+    pnodoLista aux = primero;
+    pnodoLista minimo = primero;
+    
+    while(aux->siguiente != NULL){
+        if(aux->siguiente->valor.getPrioridad() > minimo->valor.getPrioridad())
+            minimo = aux->siguiente;
+        aux = aux->siguiente;
+    }
+    return minimo->valor;
 }
 
-void Lista::muestraProcesos(){
-	pnodoLista aux;
-	aux = primero;
-	cout << "PID " << "Nombre de usuario " << "Tipo de proceso " << "Estado de proceso " << "Prioridad" << endl;
-	for (int i = 0; i < getLongitud(); i++){
-		cout << aux->valor.getPID() << aux->valor.getNombreUsuario() << aux->valor.getTipo() << aux->valor.getEstado() << aux-> valor.getPrioridad();
-		aux = aux->siguiente;
-	}
+Proceso Lista::mayorPrioridad(){
+    if(longitud < 1){
+        Proceso p;
+        p.setVacio(1);
+        return p;
+    }
+    pnodoLista aux = primero;
+    pnodoLista minimo = primero;
+    
+    while(aux->siguiente != NULL){
+        if(aux->siguiente->valor.getPrioridad() < minimo->valor.getPrioridad())
+            minimo = aux->siguiente;
+        aux = aux->siguiente;
+    }
+    return minimo->valor;
 }
 
-void Lista::buscarProcesos(){
-	int minimo = 0;
-	int maximo = 0;
-	pnodoLista aux;
-	aux = primero;
-	for(int i = 0; i < getLongitud(); i++){
-		if(primero->valor.getPrioridad() >= aux->valor.getPrioridad()){
-			aux = aux -> siguiente;
-			maximo = primero-> valor.getPrioridad();
-		}else{
-			minimo = aux -> valor.getPrioridad();
-		}
-	}
-	cout << "El proceso normal con menor prioridad es " << minimo;
-	cout << "El proceso en tiempo real con mayor prioridad es " << maximo;
+void Lista::buscarProcesosUsuario(string user){
+    if(longitud < 1)
+        return;
+    pnodoLista aux = primero;
+    while(aux->siguiente != NULL){
+        if(aux->valor.getUsuario() == user){
+            aux->valor.mostrar();
+        }
+        aux = aux->siguiente;
+    }
 }
 
-Proceso Lista::finalizarProcesos(){
-	int num_prioridad;
-	cout << "Que numero de prioridad quiere eliminar";
-	cin >> num_prioridad;
-	for (int i = 0; i < getLongitud(); i++){
-		if(primero -> valor.getPID() == num_prioridad){
-			cout << "El proceso existe";
-			eliminarPrimero();
-			primero->valor.setEstado(1);
-		}else{
-			primero = primero->siguiente;
-		}
-	return primero->valor;
-	}
+Proceso Lista::borrarProcesosPID(int pid){
+    Proceso pro;
+    if(longitud < 1){
+        pro.setVacio(1);
+        return pro;
+    }
+    pnodoLista aux = primero;
+    if(primero->valor.getPID() == pid){
+        pro = primero->valor;
+        eliminarPrimero();
+    }else if(verUltimo().getPID() == pid){
+        pro = verUltimo();
+        eliminarUltimo();
+    }else{
+        
+        while(aux->siguiente != NULL){
+            if(aux->siguiente->valor.getPID() == pid){
+                pro = aux->siguiente->valor;
+                pnodoLista p = aux->siguiente;
+                aux->siguiente = p->siguiente;
+                p->siguiente = NULL;
+                delete p;
+                longitud--;
+            }
+            aux = aux->siguiente;
+        }
+    }
+    return pro;
 }
 
-int Lista::cambiarPrioridadProcesos(){
-	int num_PID;
-	int nueva_prioridad;
-	cout << "Que numero de prioridad quiere eliminar"; 
-	cin >> num_PID;
-	for (int i = 0; i < getLongitud(); i++){
-		if(primero -> valor.getPID() != num_PID){
-			primero = primero -> siguiente;
-		}else{
-			cout << "El proceso existe, inserte la nueva prioridad ";
-			cin >> nueva_prioridad;
-			primero -> valor.setPrioridad(nueva_prioridad);
-		}
-	}
-	return primero -> valor.getPrioridad();
+Proceso *Lista::buscarProcesoPID(int pid){
+    if(longitud < 1){
+        Proceso vacio;
+        vacio.setVacio(1);
+        return &vacio;
+    }
+    pnodoLista aux = primero;
+    while(aux->siguiente != NULL){
+        if(aux->valor.getPID() == pid){
+            aux->valor.mostrar();
+            return &aux->valor;
+        }
+        aux = aux->siguiente;
+    }
 }
-
-
 
 Lista::~Lista()
 {
