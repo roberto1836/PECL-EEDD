@@ -38,7 +38,6 @@ void Cola::insertar(Proceso v){
 
 void Cola::mostrar(){
     pnodoCola aux = primero;
-    cout << "\El contenido de la cola es: \n";
     while(aux){
         aux->valor.mostrar();
         aux = aux->siguiente;

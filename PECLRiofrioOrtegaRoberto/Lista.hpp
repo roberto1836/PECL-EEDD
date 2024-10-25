@@ -23,7 +23,18 @@ public:
     Proceso verPrimero();
     Proceso verUltimo();
     
-
+    void mostrar();
+    
+    int getLongitud();
+    
+    Proceso menorPrioridad();
+    Proceso mayorPrioridad();
+    
+    void buscarProcesosUsuario(string user);
+    
+    Proceso borrarProcesosPID(int pid);
+    
+    Proceso *buscarProcesoPID(int pid);
 private:
 	int longitud;
     pnodoLista primero;

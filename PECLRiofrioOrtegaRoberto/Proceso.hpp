@@ -1,6 +1,7 @@
 #ifndef PROCESO_HPP
 #define PROCESO_HPP
 #include <iostream>
+#include <string.h>
 using namespace std;
 class Proceso
 {
@@ -16,16 +17,16 @@ public:
     void setEstado(bool e);
     int getPrioridad();
     void setPrioridad(int p);
-	string getNombreUsuario();
-	int getPID();
-    
+    int getPID();
+    char* getUsuario();
 private:
     bool tipo;
     int PID;
-    string nombreUsuario;
+    char nombreUsuario[7];
     bool estado;
     int prioridad;
     bool vacio;
+
 };
 
 #endif // PROCESO_HPP

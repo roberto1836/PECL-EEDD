@@ -2,6 +2,7 @@
 #define GESTOR_HPP
 #include "Pila.hpp"
 #include "Cola.hpp"
+#include "Lista.hpp"
 #include "Proceso.hpp"
 #include "Lista.hpp"
 
@@ -17,7 +18,7 @@ public:
 	int ProcesosEnGPU1();
 	int ProcesosEnGPU2();
 	int ProcesosEnGPU3();
-	int ProcesosEnListasTiempoReal();
+	int ProcesosEnListaTiempoReal();
 	int ProcesosEnListaNormal();
 //	int ProcesosEnArbol(Arbol a);
 	void genera12Procesos();
@@ -43,6 +44,8 @@ private:
 	Cola c1;
 	Cola c2;
 	Cola c3;
+    Lista Lnormales;
+    Lista LtiempoReal;
 	Cola prioridad;
     int pid = 300;
 	Lista ln;
