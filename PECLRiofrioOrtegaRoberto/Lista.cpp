@@ -79,13 +79,12 @@ void Lista::eliminarUltimo(){
 }
 
 void Lista::mostrar(){
-    cout << "PID\tUsuario\tTipo\tEstado\tPrioridad" << endl; 
     if(longitud < 1)
         return;
     pnodoLista aux = primero;
-    aux->valor.mostrarFila();
+    aux->valor.mostrar();
     while(aux->siguiente != NULL){
-        aux->siguiente->valor.mostrarFila();
+        aux->siguiente->valor.mostrar();
         aux = aux->siguiente;
     }
 }
@@ -93,7 +92,7 @@ void Lista::mostrar(){
 int Lista::getLongitud(){
     return longitud;
 }
-
+    
 Proceso Lista::menorPrioridad(){
     if(longitud < 1){
         Proceso p;
@@ -134,26 +133,30 @@ void Lista::buscarProcesosUsuario(string user){
     pnodoLista aux = primero;
     while(aux->siguiente != NULL){
         if(aux->valor.getUsuario() == user){
-            cout << "PID\tUsuario\tTipo\tEstado\tPrioridad" << endl;
-            aux->valor.mostrarFila();
+            aux->valor.mostrar();
         }
         aux = aux->siguiente;
     }
 }
 
-void Lista::borrarProcesosPID(int pid){
-    if(longitud < 1)
-        return;
+Proceso Lista::borrarProcesosPID(int pid){
+    Proceso pro;
+    if(longitud < 1){
+        pro.setVacio(1);
+        return pro;
+    }
     pnodoLista aux = primero;
     if(primero->valor.getPID() == pid){
+        pro = primero->valor;
         eliminarPrimero();
-        return;
     }else if(verUltimo().getPID() == pid){
+        pro = verUltimo();
         eliminarUltimo();
-        return;
     }else{
+        
         while(aux->siguiente != NULL){
             if(aux->siguiente->valor.getPID() == pid){
+                pro = aux->siguiente->valor;
                 pnodoLista p = aux->siguiente;
                 aux->siguiente = p->siguiente;
                 p->siguiente = NULL;
@@ -163,19 +166,19 @@ void Lista::borrarProcesosPID(int pid){
             aux = aux->siguiente;
         }
     }
+    return pro;
 }
 
 Proceso *Lista::buscarProcesoPID(int pid){
     if(longitud < 1){
-        Proceso va;
-        va.setVacio(1);
-        return &va;
+        Proceso vacio;
+        vacio.setVacio(1);
+        return &vacio;
     }
     pnodoLista aux = primero;
     while(aux->siguiente != NULL){
         if(aux->valor.getPID() == pid){
-            cout << "PID\tUsuario\tTipo\tEstado\tPrioridad" << endl;
-            aux->valor.mostrarFila();
+            aux->valor.mostrar();
             return &aux->valor;
         }
         aux = aux->siguiente;

@@ -19,7 +19,6 @@ public:
     void setPrioridad(int p);
     int getPID();
     
-    void mostrarFila();
     char* getUsuario();
 private:
     bool tipo;

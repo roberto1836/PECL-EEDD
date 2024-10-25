@@ -52,7 +52,7 @@ void Gestor::encolarProcesos(){
         
         Proceso procesoAux = p.cima();
 		int prioridad;
-        procesoAux.setEstado(1);
+        procesoAux.setEstado(0);
         
         if(procesoAux.getTipo()){
             prioridad = rand() % 100;
@@ -83,11 +83,15 @@ void Gestor::encolarProcesos(){
     }
 }
 void Gestor::muestraProcesosGPUs0y1(){
+    cout << "\tGPU0: \n";
 	c0.mostrar();
+    cout << "\tGPU1: \n";
 	c1.mostrar();
 }
 void Gestor::muestraProcesosGPUs2y3(){
+    cout << "\tGPU2: \n";
 	c2.mostrar();
+    cout << "\tGPU3: \n";
 	c3.mostrar();
 }
 
@@ -137,44 +141,82 @@ void Gestor::enlistarProcesos(){
 }
 
 void Gestor::muestraProcesosNormal(){
+    cout << "\tPID\tUsuario\tTipo\tEstado\t\tPrioridad" << endl;
     Lnormales.mostrar();
 }
 
 void Gestor::muestraProcesosTiempoReal(){
+    cout << "\tPID\tUsuario\tTipo\tEstado\t\tPrioridad" << endl;
     LtiempoReal.mostrar();
 }
 void Gestor::buscarProcesos(){
-    cout << "Normal menor prioridad -> \t\t";
-    Lnormales.menorPrioridad().mostrar();
-    cout << "Tiempo real mayor prioridad -> \t\t";
-    LtiempoReal.mayorPrioridad().mostrar();
+    cout << "\tNormal menor prioridad -> \t\t";
+    Proceso pro = Lnormales.menorPrioridad();
+    
+    string estado = "parado";
+    if(pro.getEstado())
+        estado = "ejecucion";
+        
+    string tipo = "normal";
+    if(pro.getTipo())
+        tipo = "tiempo real";
+    
+    cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
+    << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
+    
+    cout << "\tTiempo real mayor prioridad -> \t\t";
+    pro = LtiempoReal.mayorPrioridad();
+    
+    estado = "parado";
+    if(pro.getEstado())
+        estado = "ejecucion";
+        
+    tipo = "normal";
+    if(pro.getTipo())
+        tipo = "tiempo real";
+    
+    cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
+    << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
+ 
 }
 
 void Gestor::buscarProcesoPorNombreUsuario(){
     string o;
-    cout << "Introduce un nombre de usuario: ";
+    cout << "\tIntroduce un nombre de usuario: ";
     cin >> o;
-    
+    cout << "\tPID\tUsuario\tTipo\tEstado\t\tPrioridad" << endl;
     Lnormales.buscarProcesosUsuario(o);
+    LtiempoReal.buscarProcesosUsuario(o);
 }
 
 void Gestor::eliminarProcesoPorPID(){
     int o;
-    cout << "Introduce PID: ";
+    cout << "\tIntroduce PID: ";
     cin >> o;
+    Proceso pro = Lnormales.borrarProcesosPID(o);
+    if(pro.getVacio()){
+        pro = LtiempoReal.borrarProcesosPID(o);
+    }
     
-    Lnormales.borrarProcesosPID(o);
-    LtiempoReal.borrarProcesosPID(o);
+    if(!pro.getVacio()){
+        cout << "\tPID\tUsuario\tTipo\tEstado\tPrioridad" << endl;
+        pro.mostrar();
+        cout << endl;
+        pro.setEstado(0);
+        pro.mostrar();
+        p.insertar(pro);
+    }
+        
 }
 
 void Gestor::cambiarPrioridadProcesoPorPID(){
     int o;
-    cout << "Introduce PID: ";
+    cout << "\tIntroduce PID: ";
     cin >> o;
     
     Proceso *pro = Lnormales.buscarProcesoPID(o);
     int prio;
-    cout << "Introduce prio: ";
+    cout << "\tIntroduce prio: ";
     cin >> prio;
     pro->setPrioridad(prio);
 }

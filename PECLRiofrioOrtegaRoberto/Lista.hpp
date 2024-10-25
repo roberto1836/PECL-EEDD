@@ -28,7 +28,7 @@ public:
     
     void buscarProcesosUsuario(string user);
     
-    void borrarProcesosPID(int pid);
+    Proceso borrarProcesosPID(int pid);
     
     Proceso *buscarProcesoPID(int pid);
 private:

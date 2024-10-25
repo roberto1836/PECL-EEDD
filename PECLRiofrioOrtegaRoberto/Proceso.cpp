@@ -30,16 +30,17 @@ void Proceso::mostrar(){
         Tipo = "tiempo real";
     }
     
-    cout << "\tEl proceso cuyo PID es "<< PID << " es de tipo " << Tipo;
-    
-    
-    if(true){
-        string e = "parado";
-        if(estado){
-            e = "ejecucion";
-        }
-        cout << ", su estado es " << e << " y su prioridad es: " << prioridad;
+    string e = "parado";
+    if(estado){
+        e = "ejecucion";
+        cout << "\t" << PID << "\t" << nombreUsuario <<"\t" << Tipo << "\t" << e << "\t" << prioridad;
+
+    }else{
+        cout << "\tEl proceso cuyo PID es "<< PID << " es de tipo " << Tipo;
+        if(prioridad != 0)
+            cout << ", su estado es " << e << " y su prioridad es: " << prioridad;
     }
+
     cout << endl;
 }
 
@@ -61,10 +62,6 @@ int Proceso::getPrioridad(){
 
 void Proceso::setPrioridad(int p){
     this->prioridad = p;
-}
-
-void Proceso::mostrarFila(){
-    cout << PID << "\t" << nombreUsuario <<"\t" << tipo << "\t" << estado << "\t" << prioridad << endl;
 }
 
 char* Proceso::getUsuario(){
