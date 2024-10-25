@@ -1,20 +1,24 @@
-#ifndef LISTA_HPP
+ #ifndef LISTA_HPP
 #define LISTA_HPP
 #include "NodoLista.hpp"
+
 class Lista
 {
 public:
 	Lista();
 	~Lista();
-	void listarProcesos(Proceso v);
+	void listarProceso(Proceso v);
 	int cambiarPrioridadProcesos();
-	void buscarProcesos(Proceso v);
-	void finalizarProcesos();
+	void buscarProcesos();
+	Proceso finalizarProcesos();
+	void muestraProcesos();
+	
     
     void insertarIZQ(Proceso v);
     void insertarDER(Proceso v);
     void eliminarPrimero();
     void eliminarUltimo();
+	int getLongitud();
     
     Proceso verPrimero();
     Proceso verUltimo();

@@ -1,8 +1,7 @@
 #include "Gestor.hpp"
 
+
 Gestor::Gestor(){
-//	Lista l;
-//	Arbol a;
 }
 
 int Gestor::ProcesosEnPila(){
@@ -20,6 +19,7 @@ int Gestor::ProcesosEnGPU2(){
 int Gestor::ProcesosEnGPU3(){
 	return c3.getLongitud();
 }
+
 int Gestor::ProcesosEnListaNormal(){
     return Lnormales.getLongitud();
 }
@@ -37,14 +37,17 @@ void Gestor::genera12Procesos(){
 		}
 	}
 }
+
 void Gestor::muestraProcesos(){
 	p.mostrar();
 }
+
 void Gestor::borraProcesosPila(){
 	while(p.getLongitud() >= 1){
         p.extraer();
     }
 }
+
 void Gestor::encolarProcesos(){
 
 	while(p.getLongitud() >= 1){
@@ -82,12 +85,14 @@ void Gestor::encolarProcesos(){
         }
     }
 }
+
 void Gestor::muestraProcesosGPUs0y1(){
     cout << "\tGPU0: \n";
 	c0.mostrar();
     cout << "\tGPU1: \n";
 	c1.mostrar();
 }
+
 void Gestor::muestraProcesosGPUs2y3(){
     cout << "\tGPU2: \n";
 	c2.mostrar();

@@ -4,6 +4,8 @@
 #include "Cola.hpp"
 #include "Lista.hpp"
 #include "Proceso.hpp"
+#include "Lista.hpp"
+
 class Gestor
 {
 
@@ -46,7 +48,8 @@ private:
     Lista LtiempoReal;
 	Cola prioridad;
     int pid = 300;
-//	Lista l;
+	Lista ln;
+	Lista lt;
 //	Arbol a;
 
 };

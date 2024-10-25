@@ -70,6 +70,7 @@ char* Proceso::getUsuario(){
 
 int Proceso::getPID(){
     return this->PID;
+
 }
 
 Proceso::~Proceso()
