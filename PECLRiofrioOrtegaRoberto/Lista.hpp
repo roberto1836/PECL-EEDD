@@ -7,12 +7,6 @@ class Lista
 public:
 	Lista();
 	~Lista();
-	void listarProceso(Proceso v);
-	int cambiarPrioridadProcesos();
-	void buscarProcesos();
-	Proceso finalizarProcesos();
-	void muestraProcesos();
-	
     
     void insertarIZQ(Proceso v);
     void insertarDER(Proceso v);
@@ -24,8 +18,6 @@ public:
     Proceso verUltimo();
     
     void mostrar();
-    
-    int getLongitud();
     
     Proceso menorPrioridad();
     Proceso mayorPrioridad();

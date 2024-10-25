@@ -134,7 +134,7 @@ void Lista::buscarProcesosUsuario(string user){
     if(longitud < 1)
         return;
     pnodoLista aux = primero;
-    while(aux->siguiente != NULL){
+    while(aux != NULL){
         if(aux->valor.getUsuario() == user){
             aux->valor.mostrar();
         }
@@ -144,8 +144,8 @@ void Lista::buscarProcesosUsuario(string user){
 
 Proceso Lista::borrarProcesosPID(int pid){
     Proceso pro;
+    pro.setVacio(1);
     if(longitud < 1){
-        pro.setVacio(1);
         return pro;
     }
     pnodoLista aux = primero;
@@ -173,19 +173,18 @@ Proceso Lista::borrarProcesosPID(int pid){
 }
 
 Proceso *Lista::buscarProcesoPID(int pid){
-    if(longitud < 1){
-        Proceso vacio;
-        vacio.setVacio(1);
-        return &vacio;
-    }
+    if(longitud < 1)
+        return nullptr;
     pnodoLista aux = primero;
-    while(aux->siguiente != NULL){
+    while(aux != NULL){
         if(aux->valor.getPID() == pid){
             aux->valor.mostrar();
             return &aux->valor;
         }
         aux = aux->siguiente;
     }
+        
+    return nullptr;
 }
 
 Lista::~Lista()
