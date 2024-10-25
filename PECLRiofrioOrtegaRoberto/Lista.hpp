@@ -18,7 +18,6 @@ public:
     void insertarDER(Proceso v);
     void eliminarPrimero();
     void eliminarUltimo();
-	int getLongitud();
     
     Proceso verPrimero();
     Proceso verUltimo();

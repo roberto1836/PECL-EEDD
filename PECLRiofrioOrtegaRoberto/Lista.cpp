@@ -100,14 +100,14 @@ Proceso Lista::menorPrioridad(){
         return p;
     }
     pnodoLista aux = primero;
-    pnodoLista minimo = primero;
+    pnodoLista maximo = primero;
     
     while(aux->siguiente != NULL){
-        if(aux->siguiente->valor.getPrioridad() > minimo->valor.getPrioridad())
-            minimo = aux->siguiente;
+        if(aux->siguiente->valor.getPrioridad() > maximo->valor.getPrioridad())
+            maximo = aux->siguiente;
         aux = aux->siguiente;
     }
-    return minimo->valor;
+    return maximo->valor;
 }
 
 Proceso Lista::mayorPrioridad(){

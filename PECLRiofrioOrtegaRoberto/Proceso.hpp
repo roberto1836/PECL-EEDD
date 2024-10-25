@@ -17,14 +17,9 @@ public:
     void setEstado(bool e);
     int getPrioridad();
     void setPrioridad(int p);
-<<<<<<< HEAD
-	char* getUsuario();
-
-    
-=======
     int getPID();
     char* getUsuario();
->>>>>>> 5e2eb4627aac9374f00a0044aa3d4da10606fbd1
+
 private:
     bool tipo;
     int PID;
