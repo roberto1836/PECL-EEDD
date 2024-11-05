@@ -155,21 +155,21 @@ void Gestor::muestraProcesosTiempoReal(){
     LtiempoReal.mostrar();
 }
 void Gestor::buscarProcesos(){
-    cout << "\tNormal menor prioridad -> \t\t";
     Proceso pro = Lnormales.menorPrioridad();
     
     string estado = "parado";
     if(pro.getEstado())
         estado = "ejecucion";
-        
     string tipo = "normal";
     if(pro.getTipo())
         tipo = "tiempo real";
+    if(!pro.getVacio()){
+        cout << "\tNormal menor prioridad -> \t\t";
+        cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
+        << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
+    }
     
-    cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
-    << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
     
-    cout << "\tTiempo real mayor prioridad -> \t\t";
     pro = LtiempoReal.mayorPrioridad();
     
     estado = "parado";
@@ -179,10 +179,11 @@ void Gestor::buscarProcesos(){
     tipo = "normal";
     if(pro.getTipo())
         tipo = "tiempo real";
-    
-    cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
-    << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
- 
+    if(!pro.getVacio()){
+        cout << "\tTiempo real mayor prioridad -> \t\t";
+        cout << "\tEl proceso cuyo PID es "<< pro.getPID() << " es de tipo " << tipo
+        << ", su estado es " << estado << " y su prioridad es: " << pro.getPrioridad() << endl;
+    }
 }
 
 void Gestor::buscarProcesoPorNombreUsuario(){
