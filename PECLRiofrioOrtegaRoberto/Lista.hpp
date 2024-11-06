@@ -24,7 +24,7 @@ public:
     void buscarProcesosUsuario(string user);
     
     Proceso borrarProcesosPID(int pid);
-    
+    int getLongitud();
     Proceso *buscarProcesoPID(int pid);
 private:
 	int longitud;
