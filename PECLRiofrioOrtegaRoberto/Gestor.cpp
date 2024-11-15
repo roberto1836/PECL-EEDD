@@ -1,5 +1,5 @@
 #include "Gestor.hpp"
-
+#include <algorithm>
 
 Gestor::Gestor(){
 }
@@ -49,19 +49,35 @@ void Gestor::borraProcesosPila(){
 }
 
 void Gestor::encolarProcesos(){
-
-	while(p.getLongitud() >= 1){
+    int numeroTiempoReal = 100;
+    int numeroNormal = 39;
+    int numTR[numeroTiempoReal];
+    int numN[numeroNormal];
         
+    for (int i = 0; i < numeroNormal; ++i) {
+        numN[i] = i - 19;
+    }
+    
+    random_shuffle(numN, numN + numeroNormal);
         
+    for (int i = 0; i < numeroTiempoReal; ++i) {
+        numTR[i] = i;
+    }
+	
+    random_shuffle(numTR, numTR + numeroTiempoReal);
+    
+    while(p.getLongitud() >= 1){
         Proceso procesoAux = p.cima();
 		int prioridad;
         procesoAux.setEstado(0);
         
         if(procesoAux.getTipo()){
-            prioridad = rand() % 100;
+            prioridad = numTR[100 - numeroTiempoReal];
+            numeroTiempoReal--;
         }else{
-            prioridad = rand() % 39 - 19; 
+            prioridad = numN[39 - numeroNormal]; 
             prioridad = prioridad + 120;
+            numeroNormal--;
         }
         
         procesoAux.setPrioridad(prioridad);
