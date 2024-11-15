@@ -14,6 +14,9 @@ void Cola::insertar(Proceso v){
         if(primero->valor.getPrioridad() > nuevo->valor.getPrioridad()){
             nuevo->siguiente = primero;
             primero = nuevo;
+        }else if(ultimo->valor.getPrioridad() < nuevo->valor.getPrioridad()){
+            ultimo->siguiente = nuevo;
+            ultimo = nuevo;
         }else{
             pnodoCola aux = primero;
             while(aux->siguiente && (aux->siguiente->valor.getPrioridad() < nuevo->valor.getPrioridad())){
@@ -23,9 +26,6 @@ void Cola::insertar(Proceso v){
             if(aux->siguiente){
                 nuevo->siguiente = aux->siguiente;
                 aux->siguiente = nuevo;
-            }else{
-                ultimo->siguiente = nuevo;
-                ultimo = nuevo;
             }
         }
     }else{
