@@ -19,6 +19,7 @@ public:
     void setPrioridad(int p);
     int getPID();
     char* getUsuario();
+
 private:
     bool tipo;
     int PID;

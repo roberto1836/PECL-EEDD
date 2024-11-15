@@ -12,7 +12,6 @@ public:
     void insertarDER(Proceso v);
     void eliminarPrimero();
     void eliminarUltimo();
-	int getLongitud();
     
     Proceso verPrimero();
     Proceso verUltimo();
@@ -25,7 +24,7 @@ public:
     void buscarProcesosUsuario(string user);
     
     Proceso borrarProcesosPID(int pid);
-    
+    int getLongitud();
     Proceso *buscarProcesoPID(int pid);
 private:
 	int longitud;
