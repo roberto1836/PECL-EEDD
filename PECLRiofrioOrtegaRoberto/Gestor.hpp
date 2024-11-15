@@ -3,7 +3,7 @@
 #include "Pila.hpp"
 #include "Cola.hpp"
 #include "Lista.hpp"
-#include "Proceso.hpp"
+#include "Arbol.hpp"
 
 class Gestor
 {
@@ -35,6 +35,14 @@ public:
 	void eliminarProcesoPorPID();
 	void cambiarPrioridadProcesoPorPID();
 	void reiniciar();
+//	void dibujarABB();
+//	void procesosNormalesEnABB();
+//	void procesosTiempoRealEnABB();
+//	void procesosEnInorden();
+//	void buscarEnABB();
+//	void procesosEnNodoHoja();
+//	void cambiarPrioridadABB();
+//	void salir();
     
     
 private:
@@ -49,7 +57,7 @@ private:
     int pid = 300;
 	Lista ln;
 	Lista lt;
-//	Arbol a;
+	Arbol a;
 
 };
 

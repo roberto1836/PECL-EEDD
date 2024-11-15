@@ -110,27 +110,29 @@ int main(int argc, char** argv)
 			gestor.reiniciar();
 			break;
 		case 'P':
+			//gestor.dibujarABB();
 			break;
 		case 'Q':
-			//...;
+			//gestor.procesosNormalesEnABB();
 			break;
 		case 'R':
-			//...;
+			//gestor.procesosTiempoRealEnABB();
 			break;
 		case 'T':
-			//...;
+			//gestor.procesosEnInorden();
 			break;
 		case 'U':
-			//...;
+			//gestor.buscarEnABB();
 			break;
 		case 'V':
-			//...;
+			//gestor.procesosEnNodoHoja();
 			break;
 		case 'W':
-			//...;
+			//gestor.cambiarPrioridadABB();
 			break;
 		case 'S':
 			cout << "Saliendo del programa...\n";
+			//gestor.salir();
 			break;
 		default:
 			cout << "Opcion incorrecta!\n\n";
