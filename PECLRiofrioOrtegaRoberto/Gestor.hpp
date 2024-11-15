@@ -4,7 +4,6 @@
 #include "Cola.hpp"
 #include "Lista.hpp"
 #include "Proceso.hpp"
-#include "Lista.hpp"
 
 class Gestor
 {
