@@ -86,7 +86,7 @@ int main(int argc, char** argv)
 			gestor.borraProcesosColas();
 			break;
 		case 'H':
-      gestor.enlistarProcesos();
+            gestor.enlistarProcesos();
 			break;
 		case 'I':
 			gestor.muestraProcesosNormal();
