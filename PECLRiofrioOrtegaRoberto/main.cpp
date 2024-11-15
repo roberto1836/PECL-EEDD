@@ -45,9 +45,9 @@ int main(int argc, char** argv)
 				"por su prioridad de alta a baja.\n";
 		cout << "\tT. Mostrar los datos de todos los Procesos recorriendo el arbol "
 				"en inorden.\n";
-		cout << "\tU. Buscar en el ABB el Proceso Normal con la "
-				"prioridad mas baja, asi como el Proceso Tiempo Real "
-				"con la prioridad mas alta.\n";
+		cout << 		"prioridad mas baja, asi como el Proceso Tiempo Real "
+			"\tU. Buscar en el ABB el Proceso Normal con la "
+			"con la prioridad mas alta.\n";
 		cout << "\tV. Mostrar los Procesos que se encuentran almacenados en un nodo "
 				"hoja.\n";
 		cout << "\tW. Eliminar un Proceso por su numero de prioridad "
@@ -59,7 +59,7 @@ int main(int argc, char** argv)
 		cout << "\tIndique la opcion deseada: ";
 		cin >> opcion;
 		opcion = toupper(opcion);
-		system("clear");
+		//system("clear");
 		//system("cls");
 
 		switch(opcion) {
