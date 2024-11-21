@@ -19,7 +19,7 @@ public:
 	int ProcesosEnGPU3();
 	int ProcesosEnListaTiempoReal();
 	int ProcesosEnListaNormal();
-//	int ProcesosEnArbol(Arbol a);
+	int ProcesosEnArbol();
 	void genera12Procesos();
 	void muestraProcesos();
 	void borraProcesosPila();
@@ -35,8 +35,8 @@ public:
 	void eliminarProcesoPorPID();
 	void cambiarPrioridadProcesoPorPID();
 	void reiniciar();
-//	void dibujarABB();
-//	void procesosNormalesEnABB();
+	void dibujarABB();
+	void procesosNormalesEnABB();
 //	void procesosTiempoRealEnABB();
 //	void procesosEnInorden();
 //	void buscarEnABB();
