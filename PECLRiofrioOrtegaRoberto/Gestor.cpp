@@ -242,7 +242,11 @@ void Gestor::cambiarPrioridadProcesoPorPID(){
     
     Proceso *pro = Lnormales.buscarProcesoPID(o);
     if(pro == nullptr)
-		 return;
+		pro = LtiempoReal.buscarProcesoPID(o);
+
+    if(pro == nullptr)
+        return;
+		
     int prio;
     cout << "\tIntroduce prio: ";
     cin >> prio;
