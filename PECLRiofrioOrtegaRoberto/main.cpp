@@ -59,7 +59,7 @@ int main(int argc, char** argv)
 		cout << "\tIndique la opcion deseada: ";
 		cin >> opcion;
 		opcion = toupper(opcion);
-		//system("clear");
+		system("clear");
 		//system("cls");
 
 		switch(opcion) {

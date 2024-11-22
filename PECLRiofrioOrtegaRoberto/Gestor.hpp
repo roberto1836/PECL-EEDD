@@ -3,7 +3,6 @@
 #include "Pila.hpp"
 #include "Cola.hpp"
 #include "Lista.hpp"
-#include "Proceso.hpp"
 
 class Gestor
 {
