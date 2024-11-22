@@ -37,9 +37,9 @@ public:
 	void reiniciar();
 	void dibujarABB();
 	void procesosNormalesEnABB();
-//	void procesosTiempoRealEnABB();
-//	void procesosEnInorden();
-//	void buscarEnABB();
+	void procesosTiempoRealEnABB();
+	void procesosEnInorden();
+	void buscarEnABB();
 //	void procesosEnNodoHoja();
 //	void cambiarPrioridadABB();
 //	void salir();

@@ -113,16 +113,16 @@ int main(int argc, char** argv)
 			gestor.dibujarABB();
 			break;
 		case 'Q':
-			//gestor.procesosNormalesEnABB();
+			gestor.procesosNormalesEnABB();
 			break;
 		case 'R':
-			//gestor.procesosTiempoRealEnABB();
+			gestor.procesosTiempoRealEnABB();
 			break;
 		case 'T':
-			//gestor.procesosEnInorden();
+			gestor.procesosEnInorden();
 			break;
 		case 'U':
-			//gestor.buscarEnABB();
+			gestor.buscarEnABB();
 			break;
 		case 'V':
 			//gestor.procesosEnNodoHoja();

@@ -11,6 +11,13 @@ public:
 	void insertar(Proceso v);
 	void pintar();
 	void dibujar();
+    void inorden(pnodoAbb nodo);
+    void mostrarProcesosNormalesInOrden();
+    void mostrarProcesosTiempoRealInOrden();
+    void mostrarProcesosInOrden();
+	void buscarProcesosPorPrioridad(pnodoAbb nodo);
+	void buscarProcesosPorPrioridadMasBaja();
+	void buscarProcesosPorPrioridadMasAlta();
 	~Arbol();
 	
 private:

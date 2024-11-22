@@ -303,13 +303,27 @@ void Gestor::dibujarABB(){
         
         procesoAux.setPrioridad(prioridad);
 		a.insertar(procesoAux);
-		p.extraer();
+        p.extraer();
 	}
 	a.dibujar();
 }
 
-//void Gestor::procesosNormalesEnABB(){}
+void Gestor::procesosNormalesEnABB(){
+    a.mostrarProcesosNormalesInOrden();
+}
 
+void Gestor::procesosTiempoRealEnABB(){
+    a.mostrarProcesosTiempoRealInOrden();
+}
+
+void Gestor::procesosEnInorden(){
+    a.mostrarProcesosInOrden();
+}
+
+void Gestor::buscarEnABB(){
+	a.buscarProcesosPorPrioridadMasBaja();
+	a.buscarProcesosPorPrioridadMasAlta();
+}
 Gestor::~Gestor()
 {
 }

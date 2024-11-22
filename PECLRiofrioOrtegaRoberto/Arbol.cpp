@@ -117,6 +117,46 @@ void Arbol::dibujar(){
     cout << '\n' << '\n';
 }
 
+void Arbol::mostrarProcesosNormalesInOrden(){
+    inorden(raiz->der);
+}
+void Arbol::mostrarProcesosTiempoRealInOrden(){
+    inorden(raiz->izq);
+}
+
+void Arbol::mostrarProcesosInOrden(){
+    inorden(raiz);
+}
+
+void Arbol::inorden(pnodoAbb nodo){
+    if(nodo != NULL){
+        inorden(nodo->izq);
+        nodo->valor.mostrar();
+        inorden(nodo->der);   
+    }
+}
+
+void Arbol::buscarProcesosPorPrioridad(pnodoAbb nodo){
+	if(nodo != NULL){
+		inorden(nodo->izq);
+		if(nodo->izq = NULL){
+			nodo->valor.mostrar();
+		}
+		inorden(nodo->der);
+		if(nodo->der = NULL){
+			nodo->valor.mostrar();
+		}
+	}
+}
+
+void Arbol::buscarProcesosPorPrioridadMasBaja(){
+	buscarProcesosPorPrioridad(raiz->izq);
+}
+
+void Arbol::buscarProcesosPorPrioridadMasAlta(){
+	buscarProcesosPorPrioridad(raiz->der);
+}
+
 Arbol::~Arbol()
 {
 }
