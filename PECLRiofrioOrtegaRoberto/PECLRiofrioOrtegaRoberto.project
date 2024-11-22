@@ -106,11 +106,11 @@
       <File Name="Proceso.cpp"/>
     </VirtualDirectory>
     <VirtualDirectory Name="Header Files">
+      <File Name="Gestor.hpp"/>
       <File Name="Arbol.hpp"/>
       <File Name="NodoArbol.hpp"/>
       <File Name="NodoLista.hpp"/>
       <File Name="Lista.hpp"/>
-      <File Name="Gestor.hpp"/>
       <File Name="NodoCola.hpp"/>
       <File Name="Cola.hpp"/>
       <File Name="Proceso.hpp"/>

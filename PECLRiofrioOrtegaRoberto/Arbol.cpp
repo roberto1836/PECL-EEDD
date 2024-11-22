@@ -117,6 +117,15 @@ void Arbol::dibujar(){
     cout << '\n' << '\n';
 }
 
+
+void Arbol::inorden(pnodoAbb nodo){
+    if(nodo != NULL){
+        inorden(nodo->izq);
+        nodo->valor.mostrar();
+        inorden(nodo->der);   
+    }
+}
+
 Arbol::~Arbol()
 {
 }

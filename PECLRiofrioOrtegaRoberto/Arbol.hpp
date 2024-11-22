@@ -11,6 +11,7 @@ public:
 	void insertar(Proceso v);
 	void pintar();
 	void dibujar();
+    void inorden(pnodoAbb nodo);
 	~Arbol();
 	
 private:
