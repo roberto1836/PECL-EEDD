@@ -302,11 +302,8 @@ void Gestor::dibujarABB(){
         }
         
         procesoAux.setPrioridad(prioridad);
-	}
-	while(p.getLongitud() >= 1){
-		v = p.cima();
+		a.insertar(procesoAux);
 		p.extraer();
-		a.insertar(v);
 	}
 	a.dibujar();
 }

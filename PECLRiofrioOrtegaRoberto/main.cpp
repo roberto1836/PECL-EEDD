@@ -110,7 +110,7 @@ int main(int argc, char** argv)
 			gestor.reiniciar();
 			break;
 		case 'P':
-			//gestor.dibujarABB();
+			gestor.dibujarABB();
 			break;
 		case 'Q':
 			//gestor.procesosNormalesEnABB();
