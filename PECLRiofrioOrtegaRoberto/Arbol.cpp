@@ -117,6 +117,16 @@ void Arbol::dibujar(){
     cout << '\n' << '\n';
 }
 
+void Arbol::mostrarProcesosNormalesInOrden(){
+    inorden(raiz->der);
+}
+void Arbol::mostrarProcesosTiempoRealInOrden(){
+    inorden(raiz->izq);
+}
+
+void Arbol::mostrarProcesosInOrden(){
+    inorden(raiz);
+}
 
 void Arbol::inorden(pnodoAbb nodo){
     if(nodo != NULL){

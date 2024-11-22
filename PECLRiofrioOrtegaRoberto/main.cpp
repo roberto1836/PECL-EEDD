@@ -59,7 +59,7 @@ int main(int argc, char** argv)
 		cout << "\tIndique la opcion deseada: ";
 		cin >> opcion;
 		opcion = toupper(opcion);
-		system("clear");
+		//system("clear");
 		//system("cls");
 
 		switch(opcion) {
@@ -113,13 +113,13 @@ int main(int argc, char** argv)
 			gestor.dibujarABB();
 			break;
 		case 'Q':
-			//gestor.procesosNormalesEnABB();
+			gestor.procesosNormalesEnABB();
 			break;
 		case 'R':
-			//gestor.procesosTiempoRealEnABB();
+			gestor.procesosTiempoRealEnABB();
 			break;
 		case 'T':
-			//gestor.procesosEnInorden();
+			gestor.procesosEnInorden();
 			break;
 		case 'U':
 			//gestor.buscarEnABB();

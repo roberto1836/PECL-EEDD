@@ -308,7 +308,17 @@ void Gestor::dibujarABB(){
 	a.dibujar();
 }
 
-//void Gestor::procesosNormalesEnABB(){}
+void Gestor::procesosNormalesEnABB(){
+    a.mostrarProcesosNormalesInOrden();
+}
+
+void Gestor::procesosTiempoRealEnABB(){
+    a.mostrarProcesosTiempoRealInOrden();
+}
+
+void Gestor::procesosEnInorden(){
+    a.mostrarProcesosInOrden();
+}
 
 Gestor::~Gestor()
 {

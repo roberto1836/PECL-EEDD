@@ -12,6 +12,9 @@ public:
 	void pintar();
 	void dibujar();
     void inorden(pnodoAbb nodo);
+    void mostrarProcesosNormalesInOrden();
+    void mostrarProcesosTiempoRealInOrden();
+    void mostrarProcesosInOrden();
 	~Arbol();
 	
 private:
