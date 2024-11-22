@@ -2,6 +2,7 @@
 #include <algorithm>
 
 Gestor::Gestor(){
+	p = Pila();
 }
 
 int Gestor::ProcesosEnPila(){
@@ -27,8 +28,11 @@ int Gestor::ProcesosEnListaTiempoReal(){
     return LtiempoReal.getLongitud();
 }
 
+//int Gestor::ProcesosEnArbol(){return a.altura(pnodoAbb nodo);}
+
 void Gestor::genera12Procesos(){
 	if (p.getLongitud() < 48){
+		//Proceso v;
 		for(int i=0; i < 12; i++){
             Proceso v;
             v.crearProceso(pid);
@@ -238,9 +242,11 @@ void Gestor::cambiarPrioridadProcesoPorPID(){
     
     Proceso *pro = Lnormales.buscarProcesoPID(o);
     if(pro == nullptr)
-        pro = LtiempoReal.buscarProcesoPID(o);
+		pro = LtiempoReal.buscarProcesoPID(o);
+
     if(pro == nullptr)
         return;
+		
     int prio;
     cout << "\tIntroduce prio: ";
     cin >> prio;
@@ -258,6 +264,54 @@ void Gestor::reiniciar(){
         LtiempoReal.eliminarPrimero();
     }
 }
+
+void Gestor::dibujarABB(){
+	Proceso v;
+    v.setPrioridad(100);
+    a.insertar(v);
+ 
+	int numeroTiempoReal = 100;
+    int numeroNormal = 39;
+    int numTR[numeroTiempoReal];
+    int numN[numeroNormal];
+        
+    for (int i = 0; i < numeroNormal; ++i) {
+        numN[i] = i - 19;
+    }
+    
+    random_shuffle(numN, numN + numeroNormal);
+        
+    for (int i = 0; i < numeroTiempoReal; ++i) {
+        numTR[i] = i;
+    }
+	
+    random_shuffle(numTR, numTR + numeroTiempoReal);
+    
+    while(p.getLongitud() >= 1){
+        Proceso procesoAux = p.cima();
+		int prioridad;
+        procesoAux.setEstado(0);
+        
+        if(procesoAux.getTipo()){
+            prioridad = numTR[100 - numeroTiempoReal];
+            numeroTiempoReal--;
+        }else{
+            prioridad = numN[39 - numeroNormal]; 
+            prioridad = prioridad + 120;
+            numeroNormal--;
+        }
+        
+        procesoAux.setPrioridad(prioridad);
+	}
+	while(p.getLongitud() >= 1){
+		v = p.cima();
+		p.extraer();
+		a.insertar(v);
+	}
+	a.dibujar();
+}
+
+//void Gestor::procesosNormalesEnABB(){}
 
 Gestor::~Gestor()
 {

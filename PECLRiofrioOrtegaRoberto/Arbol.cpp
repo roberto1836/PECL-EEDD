@@ -2,8 +2,7 @@
 
 Arbol::Arbol() { raiz = nullptr; }
 void Arbol::insertar(Proceso valor) {raiz = insertar(raiz, valor);}
-pnodoAbb Arbol::insertar(pnodoAbb nodo, Proceso v)
-{
+pnodoAbb Arbol::insertar(pnodoAbb nodo, Proceso v){
 	if(!nodo)
         return new NodoArbol(v);
     if(v.getPrioridad() <= nodo->valor.getPrioridad())
