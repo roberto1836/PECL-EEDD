@@ -320,8 +320,14 @@ void Gestor::procesosEnInorden(){
     a.mostrarProcesosInOrden();
 }
 
+
 void Gestor::procesosEnNodoHoja(){
     a.procesosNodoHoja();
+
+void Gestor::buscarEnABB(){
+	a.buscarProcesosPorPrioridadMasBaja();
+	a.buscarProcesosPorPrioridadMasAlta();
+
 }
 Gestor::~Gestor()
 {

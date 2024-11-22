@@ -15,8 +15,14 @@ public:
     void mostrarProcesosNormalesInOrden();
     void mostrarProcesosTiempoRealInOrden();
     void mostrarProcesosInOrden();
+
     void procesoNodoHoja(pnodoAbb nodo);
     void procesosNodoHoja();
+
+	void buscarProcesosPorPrioridad(pnodoAbb nodo);
+	void buscarProcesosPorPrioridadMasBaja();
+	void buscarProcesosPorPrioridadMasAlta();
+
 	~Arbol();
 	
 private:

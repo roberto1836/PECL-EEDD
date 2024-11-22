@@ -122,7 +122,7 @@ int main(int argc, char** argv)
 			gestor.procesosEnInorden();
 			break;
 		case 'U':
-			//gestor.buscarEnABB();
+			gestor.buscarEnABB();
 			break;
 		case 'V':
 			gestor.procesosEnNodoHoja();

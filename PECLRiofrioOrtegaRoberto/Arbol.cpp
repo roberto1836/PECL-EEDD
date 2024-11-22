@@ -152,6 +152,27 @@ void Arbol::procesoNodoHoja(pnodoAbb nodo){
 
 
 
+void Arbol::buscarProcesosPorPrioridad(pnodoAbb nodo){
+	if(nodo != NULL){
+		inorden(nodo->izq);
+		if(nodo->izq = NULL){
+			nodo->valor.mostrar();
+		}
+		inorden(nodo->der);
+		if(nodo->der = NULL){
+			nodo->valor.mostrar();
+		}
+	}
+}
+
+void Arbol::buscarProcesosPorPrioridadMasBaja(){
+	buscarProcesosPorPrioridad(raiz->izq);
+}
+
+void Arbol::buscarProcesosPorPrioridadMasAlta(){
+	buscarProcesosPorPrioridad(raiz->der);
+}
+
 Arbol::~Arbol()
 {
 }
