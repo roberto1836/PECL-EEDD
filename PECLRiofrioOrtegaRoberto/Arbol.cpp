@@ -136,6 +136,22 @@ void Arbol::inorden(pnodoAbb nodo){
     }
 }
 
+void Arbol::procesosNodoHoja(){
+    procesoNodoHoja(raiz);
+}
+
+void Arbol::procesoNodoHoja(pnodoAbb nodo){
+    if(nodo != NULL){
+        procesoNodoHoja(nodo->izq);
+        if(nodo->izq == NULL && nodo->der == NULL)
+            nodo->valor.mostrar();
+        procesoNodoHoja(nodo->der);
+    }
+}
+
+
+
+
 void Arbol::buscarProcesosPorPrioridad(pnodoAbb nodo){
 	if(nodo != NULL){
 		inorden(nodo->izq);

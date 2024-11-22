@@ -125,7 +125,7 @@ int main(int argc, char** argv)
 			gestor.buscarEnABB();
 			break;
 		case 'V':
-			//gestor.procesosEnNodoHoja();
+			gestor.procesosEnNodoHoja();
 			break;
 		case 'W':
 			//gestor.cambiarPrioridadABB();

@@ -39,8 +39,13 @@ public:
 	void procesosNormalesEnABB();
 	void procesosTiempoRealEnABB();
 	void procesosEnInorden();
+
+//	void buscarEnABB();
+	void procesosEnNodoHoja();
+
 	void buscarEnABB();
 //	void procesosEnNodoHoja();
+
 //	void cambiarPrioridadABB();
 //	void salir();
     
