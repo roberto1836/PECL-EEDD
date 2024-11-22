@@ -323,11 +323,10 @@ void Gestor::procesosEnInorden(){
 
 void Gestor::procesosEnNodoHoja(){
     a.procesosNodoHoja();
-
+}
 void Gestor::buscarEnABB(){
-	a.buscarProcesosPorPrioridadMasBaja();
-	a.buscarProcesosPorPrioridadMasAlta();
-
+	a.buscarProcesosNormalPrioridadMasBaja();
+	a.buscarProcesosTiempoRealPrioridadMasAlta();
 }
 Gestor::~Gestor()
 {

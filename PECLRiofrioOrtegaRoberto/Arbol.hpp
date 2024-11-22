@@ -19,9 +19,11 @@ public:
     void procesoNodoHoja(pnodoAbb nodo);
     void procesosNodoHoja();
 
-	void buscarProcesosPorPrioridad(pnodoAbb nodo);
-	void buscarProcesosPorPrioridadMasBaja();
-	void buscarProcesosPorPrioridadMasAlta();
+	void buscarProcesosPorPrioridadMasBaja(pnodoAbb nodo);
+	void buscarProcesosPorPrioridadMasAlta(pnodoAbb nodo);
+    
+    void buscarProcesosTiempoRealPrioridadMasAlta();
+    void buscarProcesosNormalPrioridadMasBaja();
 
 	~Arbol();
 	

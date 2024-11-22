@@ -152,25 +152,28 @@ void Arbol::procesoNodoHoja(pnodoAbb nodo){
 
 
 
-void Arbol::buscarProcesosPorPrioridad(pnodoAbb nodo){
+void Arbol::buscarProcesosPorPrioridadMasBaja(pnodoAbb nodo){
 	if(nodo != NULL){
-		inorden(nodo->izq);
-		if(nodo->izq = NULL){
-			nodo->valor.mostrar();
-		}
-		inorden(nodo->der);
-		if(nodo->der = NULL){
-			nodo->valor.mostrar();
-		}
+		buscarProcesosPorPrioridadMasBaja(nodo->der);
+        if(nodo->der == NULL)
+            nodo->valor.mostrar();
 	}
 }
 
-void Arbol::buscarProcesosPorPrioridadMasBaja(){
-	buscarProcesosPorPrioridad(raiz->izq);
+void Arbol::buscarProcesosPorPrioridadMasAlta(pnodoAbb nodo){
+	if(nodo != NULL){
+		buscarProcesosPorPrioridadMasAlta(nodo->izq);
+        if(nodo->izq == NULL)
+            nodo->valor.mostrar();
+	}
 }
 
-void Arbol::buscarProcesosPorPrioridadMasAlta(){
-	buscarProcesosPorPrioridad(raiz->der);
+void Arbol::buscarProcesosNormalPrioridadMasBaja(){
+	buscarProcesosPorPrioridadMasBaja(raiz->der);
+}
+
+void Arbol::buscarProcesosTiempoRealPrioridadMasAlta(){
+	buscarProcesosPorPrioridadMasAlta(raiz->izq);
 }
 
 Arbol::~Arbol()
