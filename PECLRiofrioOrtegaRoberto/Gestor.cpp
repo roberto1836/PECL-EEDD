@@ -320,6 +320,9 @@ void Gestor::procesosEnInorden(){
     a.mostrarProcesosInOrden();
 }
 
+void Gestor::procesosEnNodoHoja(){
+    a.procesosNodoHoja();
+}
 Gestor::~Gestor()
 {
 }

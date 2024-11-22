@@ -15,6 +15,8 @@ public:
     void mostrarProcesosNormalesInOrden();
     void mostrarProcesosTiempoRealInOrden();
     void mostrarProcesosInOrden();
+    void procesoNodoHoja(pnodoAbb nodo);
+    void procesosNodoHoja();
 	~Arbol();
 	
 private:
