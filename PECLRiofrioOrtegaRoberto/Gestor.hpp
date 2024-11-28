@@ -40,14 +40,11 @@ public:
 	void procesosTiempoRealEnABB();
 	void procesosEnInorden();
 
-//	void buscarEnABB();
 	void procesosEnNodoHoja();
 
 	void buscarEnABB();
-//	void procesosEnNodoHoja();
 
-//	void cambiarPrioridadABB();
-//	void salir();
+	void cambiarPrioridadABB();
     
     
 private:

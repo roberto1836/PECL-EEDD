@@ -28,11 +28,10 @@ int Gestor::ProcesosEnListaTiempoReal(){
     return LtiempoReal.getLongitud();
 }
 
-//int Gestor::ProcesosEnArbol(){return a.altura(pnodoAbb nodo);}
+int Gestor::ProcesosEnArbol(){return a.getNumeroProcesos();}
 
 void Gestor::genera12Procesos(){
 	if (p.getLongitud() < 48){
-		//Proceso v;
 		for(int i=0; i < 12; i++){
             Proceso v;
             v.crearProceso(pid);
@@ -320,14 +319,37 @@ void Gestor::procesosEnInorden(){
     a.mostrarProcesosInOrden();
 }
 
-
-void Gestor::procesosEnNodoHoja(){
-    a.procesosNodoHoja();
-}
 void Gestor::buscarEnABB(){
+    cout << "\t- El proceso normal cuya prioridad es la mas baja:" << endl;
 	a.buscarProcesosNormalPrioridadMasBaja();
+    cout << "\t- El proceso normal cuya prioridad es la mas alta:" << endl;
 	a.buscarProcesosTiempoRealPrioridadMasAlta();
 }
+
+void Gestor::procesosEnNodoHoja(){
+    cout << "\tProcesos almacenados en nodos hojas:" << endl;
+    a.procesosNodoHoja();
+}
+
+void Gestor::cambiarPrioridadABB(){
+    a.dibujar();
+    int o;
+    cout << "\tIndica la prioridad del proceso que quieres eliminar: ";
+    cin >> o;
+    
+    Proceso borrado = a.borrar(o);
+    a.dibujar();
+    
+    if(borrado.getVacio())
+        return;
+    
+    if(borrado.getTipo()){
+        LtiempoReal.insertarIZQ(borrado);
+    }else{
+        Lnormales.insertarIZQ(borrado);
+    }
+}
+
 Gestor::~Gestor()
 {
 }

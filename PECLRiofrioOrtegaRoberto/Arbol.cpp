@@ -1,7 +1,13 @@
 #include "Arbol.hpp"
 
-Arbol::Arbol() { raiz = nullptr; }
-void Arbol::insertar(Proceso valor) {raiz = insertar(raiz, valor);}
+Arbol::Arbol() { 
+    raiz = nullptr;
+    numeroProcesos = 0;
+}
+void Arbol::insertar(Proceso valor) {
+    raiz = insertar(raiz, valor);
+    numeroProcesos ++;
+    }
 pnodoAbb Arbol::insertar(pnodoAbb nodo, Proceso v){
 	if(!nodo)
         return new NodoArbol(v);
@@ -85,8 +91,7 @@ void Arbol::dibujar(){
     vector<string> output(h), linkAbove(h);
     dibujarNodo(output, linkAbove, raiz, 0, 5, ' ');
 
-    for(int i = 1; i < h; i++) {
-        for(int j = 0; j < linkAbove[i].size(); j++) {
+    for(int i = 1; i < h; i++) {        for(int j = 0; j < linkAbove[i].size(); j++) {
             if(linkAbove[i][j] != ' ') {
                 int size = output[i - 1].size();
                 if(size < j + 1)
@@ -176,7 +181,70 @@ void Arbol::buscarProcesosTiempoRealPrioridadMasAlta(){
 	buscarProcesosPorPrioridadMasAlta(raiz->izq);
 }
 
+Proceso Arbol::borrar(int prio){
+    
+    Proceso p;
+    p.setVacio(1);
+    borrado = p;
+    borrarProceso(prio, raiz);
+    numeroProcesos --;
+    return borrado;
+}
+
+NodoArbol* Arbol::borrarProceso(int e, pnodoAbb nodo){
+    if(nodo != nullptr){
+        if(e == nodo->valor.getPrioridad()){
+            if(borrado.getVacio())
+                borrado = nodo->valor;
+            return borrarNodo(nodo);
+        }else{
+            if(e < nodo->valor.getPrioridad()){
+                nodo->izq = borrarProceso(e, nodo->izq);
+                return nodo;
+            }else if(e > nodo->valor.getPrioridad()){
+                nodo->der = borrarProceso(e, nodo->der);
+                return nodo;
+            }
+        }
+    }
+}
+
+Proceso Arbol::maximo(pnodoAbb nodo){
+    if(nodo != NULL){
+        if(nodo->der == NULL){
+            return nodo->valor;
+        }else{
+            return maximo(nodo->der);
+        }
+    }
+}
+
+NodoArbol* Arbol::borrarNodo(pnodoAbb nodo){
+    pnodoAbb nuevo;
+    Proceso e;
+    if(nodo->izq == NULL){
+        nuevo = nodo->der;
+        nodo->der = NULL;
+        delete nodo;
+    }else if(nodo->der == NULL){
+        nuevo = nodo->izq;
+        nodo->izq = NULL;
+        delete nodo;
+    }else{
+        e = maximo(nodo->izq);
+        nodo->valor = e;
+        nodo->izq = borrarProceso(e.getPrioridad(),nodo->izq);
+        nuevo = nodo;
+    }
+    return nuevo;
+}
+
 Arbol::~Arbol()
 {
 }
+
+int Arbol::getNumeroProcesos(){
+    return this->numeroProcesos;
+}
+
 

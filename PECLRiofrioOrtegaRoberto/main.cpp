@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 			 << gestor.ProcesosEnGPU3()
 			 << " \n\tProcesos en las listas:\n \t\tNormal-> "
 			 << gestor.ProcesosEnListaNormal() << "\tTiempo Real-> " << gestor.ProcesosEnListaTiempoReal()
-			 << "\n\tProcesos en el arbol -> " << 0							  /*gestor.ProcesosEnArbol()*/
+			 << "\n\tProcesos en el arbol -> " << gestor.ProcesosEnArbol()
 			 << "\n";
 		cout << "\t----------------------------------------------------------------"
 				"------\n\n";
@@ -45,9 +45,9 @@ int main(int argc, char** argv)
 				"por su prioridad de alta a baja.\n";
 		cout << "\tT. Mostrar los datos de todos los Procesos recorriendo el arbol "
 				"en inorden.\n";
-		cout << 		"prioridad mas baja, asi como el Proceso Tiempo Real "
-			"\tU. Buscar en el ABB el Proceso Normal con la "
-			"con la prioridad mas alta.\n";
+		cout << "\tU. Buscar en el ABB el Proceso Normal con la "
+				"prioridad mas baja, asi como el Proceso Tiempo Real "
+				"con la prioridad mas alta.\n";
 		cout << "\tV. Mostrar los Procesos que se encuentran almacenados en un nodo "
 				"hoja.\n";
 		cout << "\tW. Eliminar un Proceso por su numero de prioridad "
@@ -128,7 +128,7 @@ int main(int argc, char** argv)
 			gestor.procesosEnNodoHoja();
 			break;
 		case 'W':
-			//gestor.cambiarPrioridadABB();
+			gestor.cambiarPrioridadABB();
 			break;
 		case 'S':
 			cout << "Saliendo del programa...\n";

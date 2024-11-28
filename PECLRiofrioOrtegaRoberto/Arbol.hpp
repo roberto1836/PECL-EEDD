@@ -25,16 +25,22 @@ public:
     void buscarProcesosTiempoRealPrioridadMasAlta();
     void buscarProcesosNormalPrioridadMasBaja();
 
+    NodoArbol* borrarProceso(int e, pnodoAbb nodo);
+    NodoArbol* borrarNodo(pnodoAbb nodo);
+    Proceso maximo(pnodoAbb nodo);
+    Proceso borrar(int prio);
 	~Arbol();
-	
+	int getNumeroProcesos();
+    
 private:
+    Proceso borrado;
 	pnodoAbb raiz;
     pnodoAbb insertar(pnodoAbb, Proceso);
     void pintar(pnodoAbb);
     int altura(pnodoAbb);
     void dibujarNodo(vector<string>& output, vector<string>& linkAbove, pnodoAbb nodo, int nivel, int minPos,
                      char linkChar);
-
+    int numeroProcesos;
 };
 
 #endif // ARBOL_HPP
