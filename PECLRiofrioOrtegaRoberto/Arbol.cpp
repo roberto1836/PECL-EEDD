@@ -244,7 +244,10 @@ Arbol::~Arbol()
 }
 
 int Arbol::getNumeroProcesos(){
-    return this->numeroProcesos;
+    if(raiz != NULL && raiz->valor.getPrioridad() == 100)
+        return this->numeroProcesos - 1;
+    else
+        return this->numeroProcesos;
 }
 
 
